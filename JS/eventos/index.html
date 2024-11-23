@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos</title>
+
+    <style>
+        div{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- usando onclick no script externo -->
+    <div>
+        <button onclick="eventoClick()">CLIQUE AQUI</button>
+    </div>
+    <!-- usando onclick no script interno -->
+    <div>
+        <button onclick="document.getElementById('teste').innerHTML = Date()">QUE HORAS SÃO?</button>
+        <br>
+        <p id="teste"></p>
+    </div>
+
+    <!-- usando onclick com o próprio elemento this.innerHTML -->
+    <div>
+            <button onclick="this.innerHTML = Date()"> OUTRO BOTÃO AQUI</button>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>

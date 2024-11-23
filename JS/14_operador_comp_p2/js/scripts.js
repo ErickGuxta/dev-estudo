@@ -1,4 +1,4 @@
-var numero = 4;
+var numero = '5';
 
 if(numero === '5') {
   console.log("O numero é 5");

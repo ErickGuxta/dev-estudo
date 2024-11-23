@@ -2,11 +2,11 @@
 
 document.getElementById("texto").innerHTML = "escrito com document.getElementById().innerHTML"
 
-alert("isso é um alerta");
+// alert("isso é um alerta");
 
 console.log("hello word");
 
-//tipos de variáveis:
+//VARIAVEIS:
 
 
 let idade = 17; // tipo number
@@ -18,24 +18,40 @@ var b; //undefined (nã está definido o valor)
 console.log(idade, nome, a, valor, b)
 
 
-//array e objetos
+//ARRAY
 
 let igredientes = ["farinha", "leite", "fermento", "açucar"] // array
 
-
-console.log(igredientes)
 console.log(igredientes[3])
 
+var array = [5, "Matheus", true, {teste: 1, teste: 2}]; // obj => {}
 
-let personagem ={  //objetos
-    nome: "erick",
+console.log(array);
+
+
+
+//OBJETOS
+
+const personagem ={  //objeto
+    nome: "Erick",
     nivel: 10, 
     forca: 800,
-    magia: 10000
+    magia: 10000,
+
+
+    descricao: function () {
+        return "Este usuario, " + this.nome + " ,está no nível " + this.nivel
+    },
+    correr: function () { 
+        console.log('Esta correndo') } // -> isso é um método do meu objeto
 }
+
 
 console.log(personagem.nome)
 console.log(personagem.forca)
+console.log(personagem.descricao());
+personagem.correr();
+
 
 //FUNÇÃO
 
@@ -76,7 +92,7 @@ console.log(personagem.forca)
         console.log("minusculo");
     }
 
-    // operadores
+// OPERADORES
     /* 
         == 
         >=
@@ -84,8 +100,10 @@ console.log(personagem.forca)
         >
         <
         && 
+        "!"
+        ||
     */
 
-// LOOP
+
 
 
