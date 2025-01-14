@@ -1,0 +1,8 @@
+toUpperCase() - Transforma tudo em maiúsculas
+toLowerCase() - Transforma tudo em minúsculas 
+trim() - Remove espaços do início e do fim 
+includes() - Verifica se contém um texto específico
+startsWith() - Verifica se começa com um texto
+endsWith() - Verifica se termina com um texto
+slice() - Extrai uma parte da string
+replace() - Substitui parte do texto
