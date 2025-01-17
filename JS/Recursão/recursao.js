@@ -11,4 +11,4 @@ function inverterString(str) {
     return array[0] + somaArray(array.slice(1)); // Chamada recursiva
   }
   
-  console.log(somaArray([1, 2, 3, 4])); // Saída: 10
+  console.log(somaArray([1, 2, 3, 4])); // Saída: 
