@@ -13,4 +13,4 @@ class Carro{ // declarando a classe
 }
 
 const meuCarro = new Carro("Honda", "Civic", "Preto")
-meuCarro.acelerar
+meuCarro.acelerar()
