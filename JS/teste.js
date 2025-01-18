@@ -1,78 +1,24 @@
-class ToDoList {
-    constructor() {
-        this.tarefas = []; // Armazena as tarefas como objetos
-    }
+const aprovados = ['Erick', 'Cinthia', 'Gustavo']
 
-    // Adicionar uma tarefa
-    adicionarTarefa(descricao) {
-        const novaTarefa = {
-            id: Date.now(), // Gera um ID único com base no timestamp
-            descricao,
-            concluida: false
-        };
-        this.tarefas.push(novaTarefa);
-        console.log(`Tarefa adicionada: "${descricao}"`);
-    }
+//No método forEach, você pode passar mais parâmetros para a função de callback. O forEach já fornece três argumentos padrão para o callback:
 
-    // Listar todas as tarefas
-    listarTarefas() {
-        if (this.tarefas.length === 0) {
-            console.log("Nenhuma tarefa cadastrada.");
-            return;
-        }
+//OBS: Ordem dos parâmetros do forEach: (string, indice e o array)
+//EXEMPLO 1
+    aprovados.forEach(function(nome, indice, array) {
+        console.log(`${indice + 1} ${nome}`)
+        console.log(array)
+    })
 
-        console.log("Lista de tarefas:");
-        this.tarefas.forEach((tarefa, index) => {
-            const status = tarefa.concluida ? "✅" : "❌";
-            console.log(`${index + 1}. ${tarefa.descricao} [${status}]`);
-        });
-    }
+//EXEMPLO 2
+    aprovados.forEach((aprovado, indice, array) => {
+        console.log(`${indice + 1} ${aprovado}`)
+    });
+        //OBS. Não precisa passar todos os parâmetros
 
-    // Marcar uma tarefa como concluída
-    concluirTarefa(id) {
-        const tarefa = this.tarefas.find(t => t.id === id);
-        if (!tarefa) {
-            console.log("Tarefa não encontrada.");
-            return;
-        }
 
-        tarefa.concluida = true;
-        console.log(`Tarefa concluída: "${tarefa.descricao}"`);
-    }
+// Posso criar os parâmetros de forma externa 
 
-    // Remover uma tarefa
-    removerTarefa(id) {
-        const indice = this.tarefas.findIndex(t => t.id === id);
-        if (indice === -1) {
-            console.log("Tarefa não encontrada.");
-            return;
-        }
+const exibirAprovados = nome => console.log(nome)
+aprovados.forEach(exibirAprovados)
 
-        const [tarefaRemovida] = this.tarefas.splice(indice, 1);
-        console.log(`Tarefa removida: "${tarefaRemovida.descricao}"`);
-    }
-}
 
-// Testando a To-Do List
-const minhaToDo = new ToDoList();
-
-// Adicionando tarefas
-minhaToDo.adicionarTarefa("Comprar pão");
-minhaToDo.adicionarTarefa("Estudar JavaScript");
-
-// Listando tarefas
-minhaToDo.listarTarefas();
-
-// Concluindo uma tarefa
-const idParaConcluir = minhaToDo.tarefas[0].id; // Pega o ID da primeira tarefa
-minhaToDo.concluirTarefa(idParaConcluir);
-
-// Listando novamente
-minhaToDo.listarTarefas();
-
-// Removendo uma tarefa
-const idParaRemover = minhaToDo.tarefas[1].id; // Pega o ID da segunda tarefa
-minhaToDo.removerTarefa(idParaRemover);
-
-// Listando novamente
-minhaToDo.listarTarefas();

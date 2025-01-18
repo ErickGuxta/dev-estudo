@@ -1,4 +1,4 @@
-//Identificadores privados não são permitidos fora dos corpos de classe.ts(18016)
+//Identificadores privados não são permitidos fora dos corpos de classe
 
 
 class Cofre {
@@ -70,3 +70,29 @@ tasks.adicionarTarefas("Comprar pão")
 tasks.adicionarTarefas("Comprar arroz")
 tasks.adicionarTarefas("Comprar feijão")
 tasks.listarTarefas()
+
+
+//Desafio
+
+class User {
+  #senha
+  constructor(senhaInicial) {
+    this.#senha = senhaInicial
+  }
+
+  alterarSenha(senhaAtual, novaSenha){
+    if (senhaAtual === this.#senha) {
+      this.#senha = novaSenha
+      console.log('Senha alterado com sucesso!')
+
+
+    }else {
+      console.log('Senha incorreta!')
+   }
+  }
+
+}
+
+const user1 = new User(1234)
+user1.alterarSenha(1234, 12345)
+
