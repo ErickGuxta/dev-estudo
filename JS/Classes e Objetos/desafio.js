@@ -40,7 +40,9 @@ class Agenda {
 
     removerContato(nome){
         const indice = this.contatos.findIndex(contato => contato.startsWith(`${nome}:`));
-        return this.contatos.splice(indice, 1)
+        return this.contatos.splice(indice)
+            // obs array.splice(inicio, quantidade, item1, item2, ...)
+
 
     }
 
@@ -53,7 +55,6 @@ const agenda1 = new Agenda()
 agenda1.adicionarContato('Erick', 77998094236)
 agenda1.adicionarContato('Gustavo', 77998094236)
 agenda1.adicionarContato('Cinthia', 77998094236)
-
 agenda1.removerContato('Cinthia')
 
 agenda1.exibirContatos()
