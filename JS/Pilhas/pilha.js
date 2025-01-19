@@ -1,0 +1,5 @@
+class Pilha {
+    constructor(parameters) {
+        
+    }
+}

@@ -1,7 +1,7 @@
 // Escreva uma função para verificar se uma palavra é um palíndromo usando recursão.
 
 function VerificarPalavra(palavra) {
-    if (palavra.length<= 1) return true;
+    if (palavra.length <= 1) return true;
 
     if (palavra[0] !== palavra[palavra.length - 1]) return false;
 
