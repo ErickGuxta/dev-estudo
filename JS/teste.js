@@ -1,15 +1,9 @@
-function buscaEmLargura(grafo, inicio) {
-  const visitados = new Set();
-  const fila = [inicio];
+function buscaEmProfundidade(grafo, no, visitados = new Set()) {
+    if (visitados.has(no)) return;
+    console.log(no)
+    visitados.add(no)
+    grafo[no].forEach(element => buscaEmProfundidade(grafo, element, visitados));
 
-  while (fila.length > 0) {
-    const no = fila.shift();
-    if (!visitados.has(no)) {
-      console.log(no);
-      visitados.add(no);
-      fila.push(...grafo[no]);
-    }
-  }
 }
 
 const grafo = {
@@ -21,4 +15,4 @@ const grafo = {
   6: [4],
 };
 
-buscaEmLargura(grafo, 1);
+buscaEmProfundidade(grafo, 1);
