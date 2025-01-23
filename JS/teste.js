@@ -1,18 +1,27 @@
-function buscaEmProfundidade(grafo, no, visitados = new Set()) {
-    if (visitados.has(no)) return;
-    console.log(no)
-    visitados.add(no)
-    grafo[no].forEach(element => buscaEmProfundidade(grafo, element, visitados));
+console.log('Inicio')
 
+function rodarDepoisDe2Segundos(callback) {
+    setTimeout(()=>{     //passso uma função anonima como parametro: () => {callback()}
+        callback()
+    }, 2000)
 }
 
-const grafo = {
-  1: [2, 5],
-  2: [1, 4, 3],
-  3: [2, 4],
-  4: [2, 3, 5, 6],
-  5: [1, 4],
-  6: [4],
-};
+rodarDepoisDe2Segundos(() => {
+    console.log('Rodando depois de 2 segundos')
+})
 
-buscaEmProfundidade(grafo, 1);
+
+
+//sem função anonima
+function executarCallback() {
+    console.log("Rodando depois de 2 segundos")
+}
+
+function rodarDepoisDe2Segundos(callback) {
+    setTimeout(callback, 2000) // Passa a função nomeada como callback
+}
+
+rodarDepoisDe2Segundos(executarCallback)
+
+
+console.log('Fim')
