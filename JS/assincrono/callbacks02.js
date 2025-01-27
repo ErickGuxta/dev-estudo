@@ -41,7 +41,7 @@ const user = loginUser(
     'gustavocostacnn@gmial.com', 
     '123456', 
 
-    //PERCEBA QUE A IDEIA AQUI É QUE O PARÂMETRO VIDEO ARMAZENA OS DADOS DA CALLBACK
+    //PERCEBA QUE A IDEIA AQUI É QUE O PARÂMETRO VIDEOS ARMAZENA OS DADOS DA CALLBACK
 
     (user) => {
         getUserVideos(user.emailUsuario, (videos) => {
