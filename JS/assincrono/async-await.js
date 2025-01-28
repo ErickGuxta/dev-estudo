@@ -1,6 +1,6 @@
 const loginUser = (email, password) => {
   return new Promise((resolve, reject) => {
-    const error = true;
+    const error = false;
 
     if (error) {
       reject(new Error("error in login!"));
