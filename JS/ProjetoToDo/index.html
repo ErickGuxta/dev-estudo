@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todoist Replica</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+        }
+        .container {
+            width: 60%;
+            margin: 50px auto;
+        }
+        .task-list {
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            background: #fff;
+        }
+        .task {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid #e0e0e0;
+            padding: 10px 0;
+        }
+        .task:last-child {
+            border-bottom: none;
+        }
+        .task input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        .task-title {
+            font-weight: 500;
+            color: #202124;
+            flex-grow: 1;
+        }
+        .task-meta {
+            font-size: 12px;
+            color: #888;
+        }
+        .add-task {
+            color: #d93025;
+            cursor: pointer;
+            font-size: 14px;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="task-list">
+            <div class="task">
+                <input type="checkbox">
+                <div class="task-title">Estudar programação</div>
+                <div class="task-meta">JSON + Projeto</div>
+            </div>
+            <div class="add-task">+ Adicionar tarefa</div>
+        </div>
+    </div>
+</body>
+</html>
