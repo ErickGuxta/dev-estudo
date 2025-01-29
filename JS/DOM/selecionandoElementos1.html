@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Selecionar Elementos #01</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+
+<body class="conteudo exercicio">
+    <div id="primeiro">#primeiro</div>
+    <div>Segundo</div>
+    <div class="ultimo">Aqui o ultimo elemento!!</div>
+    <script>
+        //USANDO document.getElementById()             
+        document.getElementById('primeiro').classList.add('destaque')
+
+        //USANDO document.getElementsByTagName()          
+        const divs = document.getElementsByTagName('div')
+
+        //  transformando a coleção em um array e aplicando uma propriedade para cada elemento
+        Array.from(divs).forEach(element => {
+            element.classList.remove('destaque')
+        });
+
+        //posso fazer a mesma coisa usando operador Spred
+        const divsArray = [...divs]
+        divsArray.forEach(element => {
+            element.classList.add('destaque')
+        });
+
+        //USANDO document.getElementsByClassName()          
+
+        const ultimosElementos = document.getElementsByClassName('ultimo')
+
+        console.log(ultimosElementos)
+        //como a coleção so possui um elemtnto, não ha necessidade de fazer um foreach
+        for (let element of ultimosElementos) {
+            element.classList.remove('destaque')
+        }
+
+
+
+    </script>
+</body>
+
+</html>
