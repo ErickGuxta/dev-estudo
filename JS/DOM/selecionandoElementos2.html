@@ -11,13 +11,28 @@
     <div class="terceiro ultimo"><span wb-attrib>.terceiro .ultimo</span></div>
     <script>              
         // criando uma função para aplicar seletor destaque
-        const selecionar = (seletor) => {
-            document.querySelectorAll(seletor).forEach(element => {
-                element.classList.add('destaque')
-            });
+
+        class mudarSelecao {
+            constructor(seletor) {
+                this.seletor = seletor
+                this.elementos = querySelectorAll(this.seletor)
+            }
+
+            selecionar(){
+                document.elementos.forEach(element => {
+                    element.classList.add('destaque')
+                })
+            }
+            descelecionar(){
+                document.elementos.forEach(element => {
+                    element.classList.remove('destaque')
+                })
+            }
         }
 
-        selecionar('#primeiro');
+        minhaSelecaoDiv = new mudarSelecao('div')
+
+        minhaSelecaoDiv.selecionar(div)
     </script>
 </body>
 </html>
