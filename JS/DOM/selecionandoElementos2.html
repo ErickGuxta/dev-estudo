@@ -10,29 +10,51 @@
     <div>Segundo</div>
     <div class="terceiro ultimo"><span wb-attrib>.terceiro .ultimo</span></div>
     <script>              
-        // criando uma função para aplicar seletor destaque
 
-        class mudarSelecao {
-            constructor(seletor) {
-                this.seletor = seletor
-                this.elementos = document.querySelectorAll(this.seletor)
-            }
+        //USANDO CLASSE (SÓ PARA BRINCAR MESMO KKKKK)
+
+        // class mudarSelecao {
+        //     constructor(seletor) {
+        //         this.seletor = seletor
+        //         this.elementos = document.querySelectorAll(this.seletor)
+        //     }
             
-            selecionar(){
-                this.elementos.forEach(element => {
-                    element.classList.add('destaque')
-                })
-            }
-            desselecionar(){
-                this.elementos.forEach(element => {
-                    element.classList.remove('destaque')
-                })
-            }
+        //     selecionar(){
+        //         this.elementos.forEach(element => {
+        //             element.classList.add('destaque')
+        //         })
+        //     }
+        //     desselecionar(){
+        //         this.elementos.forEach(element => {
+        //             element.classList.remove('destaque')
+        //         })
+        //     }
+        // }
+
+        // minhaSelecao = new mudarSelecao('div')
+        // minhaSelecao2 = new mudarSelecao('#primeiro')
+
+        // minhaSelecao.selecionar()
+        // minhaSelecao2.desselecionar()
+
+        // criando uma função para aplicar seletor destaque
+        const selecionar = (seletor) => {
+            document.querySelectorAll(seletor).forEach(element => {
+                element.classList.add('destaque')
+            })
         }
 
-        minhaSelecao = new mudarSelecao('div')
+        const desselecionar = (seletor) => {
+            document.querySelectorAll(seletor).forEach(element => {
+                element.classList.remove('destaque')
+            })
+        }
 
-        minhaSelecao.selecionar()
+        
+        desselecionar('*')
+        selecionar('[wb-attrib]')  //selecionando um atributo
+
+
     </script>
 </body>
 </html>
