@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Trabalhando com Eventos #01</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+</head>
+
+<body class="conteudo exercicio">
+    <div>
+        <a wait-attribute href="https://google.com.br" onclick="navegarEm5s(event)" >Google</a>
+    </div>
+    <script>
+        function navegarEm5s(event){
+            event.preventDefault() // o prevente default faz com que o evento predefinido não seja o padrão
+            setTimeout(() => {
+                const link = event.target
+                window.location.href = link.href
+            }, 5000)
+                    // event: evento que ocorreu (neste caso, um clique).
+                    // target: elemento que disparou o evento, ou seja, o botão que foi clicado.
+                    // textContent: Esta propriedade retorna o conteúdo de texto do elemento. 
+        }
+
+        //POSSO USAR O ONCLICK FORA DO LINK
+        document.querySelector('[wait-attribute]').addEventListener("click", function(event) {
+            navegarEm5s(event)
+        })
+    </script>
+</body>
