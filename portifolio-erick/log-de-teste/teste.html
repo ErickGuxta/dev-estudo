@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Portifofio-Erick</title>
+    <style>
+        @import url('https://meyerweb.com/eric/tools/css/reset/reset.css');
+        @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+        :root {
+            /* gray tons */
+            --gray-900: #0C0C0D;
+            --gray-800: #131313;
+            --gray-700: #272727;
+            --gray-400: #6F6F6F;
+            --gray-300: #C8C8C8;
+            --green-500: #5FB9B0;
+            --purple-300: #B292FF;
+            --white: #FFFFFF;
+            --gray-gradient: linear-gradient(to right, #232323 0%, #434343 49%, #232323 100%);
+        }
+
+
+        body {
+            max-width: 100vw;
+            display: flex;
+            font-family: Raleway;
+            color: var(--white);
+            background-color: var(--gray-900);
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 20px auto 0;
+            padding: 0 20px;
+            gap: 100px;
+        }
+
+        /* Navbar */
+        .navbar {
+            width: 358px;
+            height: 28px;
+            padding: 10px 32px 10px 32px;
+            border-radius: 100px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            gap: 32px;
+            background-color: #211F23;
+
+        }
+
+
+        .navbar .text ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            gap: 30px;
+        }
+
+        .navbar .text ul li {
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        .navbar .icons ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            gap: 9px;
+        }
+
+        .icons ul li img {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+
+        /* section-main */
+
+        .section-main {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            flex-direction: row;
+            flex-wrap: wrap-reverse;
+        }
+
+        .section-main .container-left {
+            width: 45%;
+            padding: 5px;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .container-left h1 {
+            color: var(--white);
+            font-size: 44px;
+            font-weight: 500;
+        }
+
+        .container-left .description p {
+            color: var(--gray-400);
+            font-size: 16px;
+            line-height: 1.9;
+        }
+
+        .container-left .buttons {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .buttons button {
+            width: 116px;
+            height: 28px;
+            border: none;
+            border-radius: 100px;
+            background-color: var(--white);
+            color: var(--gray-900);
+            font-size: 10px;
+            font-weight: bold;
+        }
+
+        .buttons a {
+            text-decoration: none;
+            color: var(--purple-300);
+            font-size: 10px;
+        }
+
+        /* section-projects */
+
+        .section-projects {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .section-projects .container-projects {
+            gap: 38px;
+            padding: 62px;
+        }
+
+        .titulo h2 {
+            color: var(--gray-300);
+            font-weight: normal;
+            font-size: 38px;
+            margin-bottom: 38px;
+        }
+
+        .section-projects .container-projects {
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Carrossel Estilo e Funcionamento */
+        .carousel-container {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .carousel {
+            display: flex;
+            gap: 20px;
+            cursor: grab;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+            scroll-snap-type: x mandatory;
+            padding: 20px 10px;
+        }
+
+        /* Esconde a barra de rolagem mas mantém a funcionalidade */
+        .carousel::-webkit-scrollbar {
+            display: none;
+        }
+
+        .carousel {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .carousel-item {
+            flex: 0 0 264px;
+            height: 184px;
+            background: var(--gray-700);
+            border-radius: 36px;
+            scroll-snap-align: start;
+            transition: all 0.3s ease;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Efeito de expansão ao passar o mouse */
+        .carousel-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            z-index: 10;
+        }
+
+        /* Conteúdo de exemplo para os itens do carrossel */
+        .carousel-item-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 20px;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+            color: white;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .carousel-item:hover .carousel-item-content {
+            opacity: 1;
+        }
+
+        .carousel-item-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .carousel-item-desc {
+            font-size: 12px;
+            color: var(--gray-300);
+        }
+
+        /* Cores diferentes para cada item do carrossel */
+        .carousel-item:nth-child(1) {
+            background: linear-gradient(135deg, #5FB9B0, #4A9690);
+        }
+
+        .carousel-item:nth-child(2) {
+            background: linear-gradient(135deg, #B292FF, #8E74CC);
+        }
+
+        .carousel-item:nth-child(3) {
+            background: linear-gradient(135deg, #FF92B2, #CC74A1);
+        }
+
+        .carousel-item:nth-child(4) {
+            background: linear-gradient(135deg, #92CEFF, #74A6CC);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <div class="text">
+                <ul>
+                    <li>Erick</li>
+                    <li>aprendizado</li>
+                    <li>experiência</li>
+                </ul>
+            </div>
+            <div class="icons">
+                <ul>
+                    <li><img src="img/figma-icon.svg" alt="icon-figma"></li>
+                    <li><img src="img/icon-github.svg" alt="icon-github"></li>
+                    <li><img src="img/icon-linkedin.svg" alt="icon-linkedin"></li>
+                    <li><img src="img/icon-email.png" alt="icon-email"></li>
+                </ul>
+            </div>
+        </nav>
+
+        <section class="section-main">
+            <div class="container-left">
+                <h1>Olá, Eu sou Erick</h1>
+                <div class="description">
+                    <p>Atualmente, estou aprimorando minhas habilidades no desenvolvimento Full Stack, construindo
+                        aplicações web interativas e otimizadas. Tenho experiência prática com HTML, CSS e JavaScript,
+                        criando interfaces modernas e responsivas. No back-end, estou explorando php e bancos de dados
+                        como
+                        MySQL.</p>
+                </div>
+                <div class="buttons">
+                    <button>Entre em contato</button>
+                    <a href="#">Baixar currículo</a>
+                </div>
+            </div>
+
+            <div class="image-erick">
+                <img src="img/image-erick.png" alt="imagem erick">
+            </div>
+        </section>
+
+        <section class="section-projects">
+            <div class="container-projects">
+                <div class="titulo">
+                    <h2>Meus projetos</h2>
+                </div>
+                <div class="carousel-container">
+                    <div class="carousel">
+                        <div class="carousel-item">
+                            <div class="carousel-item-content">
+                                <div class="carousel-item-title">Projeto 1</div>
+                                <div class="carousel-item-desc">Aplicação Web utilizando HTML, CSS e JavaScript</div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="carousel-item-content">
+                                <div class="carousel-item-title">Projeto 2</div>
+                                <div class="carousel-item-desc">Sistema de gerenciamento com PHP e MySQL</div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="carousel-item-content">
+                                <div class="carousel-item-title">Projeto 3</div>
+                                <div class="carousel-item-desc">Site responsivo para e-commerce</div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="carousel-item-content">
+                                <div class="carousel-item-title">Projeto 4</div>
+                                <div class="carousel-item-desc">Portfolio interativo com animações CSS</div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="carousel-item-content">
+                                <div class="carousel-item-title">Projeto 5</div>
+                                <div class="carousel-item-desc">Dashboard para visualização de dados</div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="carousel-item-content">
+                                <div class="carousel-item-title">Projeto 6</div>
+                                <div class="carousel-item-desc">Aplicativo móvel com design responsivo</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>
