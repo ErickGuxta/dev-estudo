@@ -35,7 +35,7 @@ body{
     border: 1px solid seagreen;
 }
 
-/* Navbar */
+/* -------- NAV BAR ---------- */
 .navbar{
     width: 358px;
     height: 28px;
@@ -47,7 +47,10 @@ body{
     align-items: center;
     flex-direction: row;
     gap: 32px;
-    background-color: #211F23;
+    background: rgba(33, 31, 35, 0.8);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+
 
 }
 
@@ -66,6 +69,11 @@ body{
     cursor: pointer;
 }
 
+.navbar .text ul li:hover{
+    color: var(--purple-300);
+}
+
+
 .navbar .icons ul{
     display: flex;
     justify-content: center;
@@ -78,17 +86,24 @@ body{
     width: 18px;
     height: 18px;
     cursor: pointer;
+    transition: 500ms linear;
 }
 
-/* section-main */
+.icons ul li img:hover{
+    transform: scale(1.1);
+}
+
+/* -------- SECTION MAIN---------- */
 
 .section-main{
-    border: 1px solid red;
     width: 100%;
     display: flex;
     justify-content: space-around;
     flex-direction: row;
     flex-wrap: wrap-reverse;
+
+    border: 1px solid red;
+
 }
 
 .section-main .container-left{
@@ -131,6 +146,13 @@ body{
     color: var(--gray-900);
     font-size: 10px;
     font-weight: bold;
+    cursor: pointer;
+    transition: 500ms linear;
+}
+
+.buttons button:hover{
+    transform: scale(1.1); 
+
 }
 
 .buttons a{
@@ -138,6 +160,8 @@ body{
     color: var(--purple-300);
     font-size: 10px;
 }
+
+
 .section-main .image-erick{
     border: 1px solid rgb(114, 63, 255);
 
@@ -147,20 +171,26 @@ body{
 
 .section-projects{
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     flex-direction: column;
+    padding: 40px 0;
+    overflow: hidden;
+
     border: 1px solid rgb(0, 255, 242);
 }
 
 .section-projects .container-projects{
-    gap: 38px;
-    padding: 62px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
 }
 
-.section-projects .titulo{
-}
 
 .titulo h2{
     color: var(--gray-300);
@@ -170,11 +200,6 @@ body{
 
 }
 
-.section-projects .container-projects{
-    display: flex;
-    flex-direction: column;
-
-}
 
 /* Carrossel Estilo e Funcionamento */
 .carousel-container {
@@ -222,3 +247,261 @@ body{
     z-index: 10;
 }
 
+
+/* -------- SECTION TECHNOLOGICS---------- */
+
+.section-tech{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 40px 0;
+    overflow: hidden;
+
+    
+    border: 1px solid rgb(89, 0, 255);
+
+}
+
+.section-tech .container-tech{
+    display: flex;
+    flex-direction: column;
+    gap: 38px;
+    padding: 62px;
+    
+
+    border: solid 1px burlywood;
+}
+
+.titulo-tech{
+    display: flex;
+}
+
+.titulo-tech h2{
+    color: var(--gray-300);
+    font-weight: normal;
+    font-size: 38px;
+    margin-bottom: 38px;
+}
+
+.containers-tecnologia{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border: solid 1px red;
+
+    gap: 20px;
+
+}
+
+.containers-tecnologia > div{
+    width: 265px;
+    height: 280px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+
+    border-radius: 12px;
+    border: solid 2px var(--gray-700);
+    
+    cursor: pointer;
+    transition: 500ms linear;
+
+}
+
+.containers-tecnologia > div:hover{
+    transform: scale(1.1); /* Aumenta q div */
+    box-shadow: 0 8px 20px rgba(52, 36, 66, 0.3);
+
+}
+
+.containers-tecnologia .subtitle h3 {
+    padding: 20px;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--purple-300);
+}
+
+.containers-tecnologia .item {
+    width: 100%;
+    padding: 0 20px 20px;
+}
+
+.containers-tecnologia .item ul {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.containers-tecnologia .item ul li {
+    color: var(--gray-400);
+    font-size: 14px;
+}
+
+/* -------- SECTION CONTACT---------- */
+
+.section-contact{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 40px 0;
+    overflow: hidden;
+
+    border: 1px solid rgb(89, 0, 255);
+
+}
+
+.section-contact .container-contact{
+    display: flex;
+    flex-direction: column;
+    gap: 38px;
+    padding: 62px;
+    
+    border: solid 1px burlywood;
+}
+
+
+
+.titulo-contact h2{
+    color: var(--gray-300);
+    font-weight: normal;
+    font-size: 38px;
+    margin-bottom: 38px;
+}
+
+
+/* -------- PARTE DO SIGA-ME E FORMULARIO---------- */
+
+.container-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    border: solid 3px rgb(234, 255, 43);
+}
+
+.container-form .container-left{
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border: solid 2px rgb(255, 0, 0);
+}
+
+.container-form .container-left h3{
+    font-size: 28px;
+    font-weight: 500;
+}
+
+.container-form .container-left .social-medias{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+}
+
+.container-form .container-left .social-medias a img{
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    transition: 500ms linear;
+}
+
+.container-form .container-left .social-medias a img:hover{
+    transform: scale(1.1);
+}
+
+
+.container-form .form{
+    width: 75%;
+    border: solid 2px rgb(0, 32, 175);
+}
+
+.container-form form{
+    display: flex;
+    justify-content: center;    
+    flex-direction: column;
+    gap: 32px;
+
+
+}
+
+.container-form form input{
+    border: none;
+    border-radius: 32px;
+    background-color: var(--gray-800);
+    padding: 16px 24px;
+    color: var(--white);
+    font-size: 14px;
+    outline: none;
+}
+
+.container-form form textarea {
+    border: none;
+    border-radius: 32px;
+    background-color: var(--gray-800);
+    padding: 16px 24px;
+    color: var(--white);
+    font-size: 14px;
+    outline: none;
+    min-height: 120px;
+    max-height: 250px;
+    resize: vertical;
+    font-family: Raleway;
+    line-height: 1.5;
+}
+
+.container-form form textarea::placeholder {
+    color: var(--gray-400);
+    opacity: 0.7;
+}
+
+.container-form form textarea:focus {
+    border: 2px solid var(--green-500);
+    box-shadow: 0 0 10px rgba(95, 185, 176, 0.3);
+}
+
+/* -----Buttons----- */
+.container-form .form form button {
+    width: 196px;
+    height: 36px;
+    border: none;
+    border-radius: 100px;
+    background-color: var(--white);
+    color: var(--gray-900);
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 500ms linear;
+    text-transform: uppercase;
+}
+
+.container-form .form form button:hover {
+    transform: scale(1.02);
+    background-color: var(--green-500);
+    color: var(--white);
+}
+
+.container-form form input::placeholder {
+    color: var(--gray-400);
+    opacity: 0.7;
+}
+
+.container-form form input:focus {
+    border: 2px solid var(--green-500);
+    box-shadow: 0 0 10px rgba(95, 185, 176, 0.3);
+}
+
+.container-form .form form .textarea {
+    resize: vertical;
+    min-height: 120px;
+    max-height: 250px;
+}
