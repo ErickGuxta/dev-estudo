@@ -31,8 +31,6 @@ body{
     margin: 20px auto 0;
     padding: 0 20px;
     gap: 100px;
-
-    border: 1px solid seagreen;
 }
 
 /* -------- NAV BAR ---------- */
@@ -101,9 +99,6 @@ body{
     justify-content: space-around;
     flex-direction: row;
     flex-wrap: wrap-reverse;
-
-    border: 1px solid red;
-
 }
 
 .section-main .container-left{
@@ -113,9 +108,6 @@ body{
     justify-content: center;
     flex-direction: column;
     gap: 16px;
-
-    border: 1px solid rgb(48, 255, 7);
-
 }
 
 .container-left h1{
@@ -163,8 +155,6 @@ body{
 
 
 .section-main .image-erick{
-    border: 1px solid rgb(114, 63, 255);
-
 }
 
 /* section-projects */
@@ -177,8 +167,6 @@ body{
     flex-direction: column;
     padding: 40px 0;
     overflow: hidden;
-
-    border: 1px solid rgb(0, 255, 242);
 }
 
 .section-projects .container-projects{
@@ -258,10 +246,6 @@ body{
     flex-direction: column;
     padding: 40px 0;
     overflow: hidden;
-
-    
-    border: 1px solid rgb(89, 0, 255);
-
 }
 
 .section-tech .container-tech{
@@ -269,9 +253,6 @@ body{
     flex-direction: column;
     gap: 38px;
     padding: 62px;
-    
-
-    border: solid 1px burlywood;
 }
 
 .titulo-tech{
@@ -291,8 +272,6 @@ body{
     align-items: center;
     flex-direction: row;
     flex-wrap: wrap;
-    border: solid 1px red;
-
     gap: 20px;
 
 }
@@ -352,9 +331,6 @@ body{
     flex-direction: column;
     padding: 40px 0;
     overflow: hidden;
-
-    border: 1px solid rgb(89, 0, 255);
-
 }
 
 .section-contact .container-contact{
@@ -362,8 +338,6 @@ body{
     flex-direction: column;
     gap: 38px;
     padding: 62px;
-    
-    border: solid 1px burlywood;
 }
 
 
@@ -383,8 +357,6 @@ body{
     justify-content: center;
     align-items: center;
     gap: 20px;
-
-    border: solid 3px rgb(234, 255, 43);
 }
 
 .container-form .container-left{
@@ -392,7 +364,6 @@ body{
     display: flex;
     flex-direction: column;
     gap: 8px;
-    border: solid 2px rgb(255, 0, 0);
 }
 
 .container-form .container-left h3{
@@ -422,7 +393,6 @@ body{
 
 .container-form .form{
     width: 75%;
-    border: solid 2px rgb(0, 32, 175);
 }
 
 .container-form form{
