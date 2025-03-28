@@ -21,6 +21,7 @@ body{
     font-family: Raleway;
     color: var(--white);
     background-color: var(--gray-900);
+    background-image: url("../img/home.png");
 }
 
 .container{
@@ -31,13 +32,14 @@ body{
     margin: 20px auto 0;
     padding: 0 20px;
     gap: 100px;
+    width: 100%;
 }
 
 /* -------- NAV BAR ---------- */
 .navbar{
     width: 358px;
     height: 28px;
-    padding: 10px 32px 10px 32px;
+    padding: 10px 36px 10px 36px;
     border-radius: 100px;
     
     display: flex;
@@ -45,6 +47,7 @@ body{
     align-items: center;
     flex-direction: row;
     gap: 32px;
+    
     background: rgba(33, 31, 35, 0.8);
     backdrop-filter: blur(8px);
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
@@ -63,13 +66,21 @@ body{
 
 .navbar .text ul li{
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 300;
     cursor: pointer;
 }
 
-.navbar .text ul li:hover{
+.navbar .text ul li a{
+    text-decoration: none;
+    color: var(--white);
+}
+
+.navbar .text ul li a:hover{
+    font-weight: 500;
     color: var(--purple-300);
 }
+
+
 
 
 .navbar .icons ul{
@@ -99,6 +110,8 @@ body{
     justify-content: space-around;
     flex-direction: row;
     flex-wrap: wrap-reverse;
+    padding: 40px 0;
+
 }
 
 .section-main .container-left{
@@ -154,14 +167,10 @@ body{
 }
 
 
-.section-main .image-erick{
-}
-
 /* section-projects */
 
 .section-projects{
     width: 100%;
-    min-height: 100vh;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -205,6 +214,8 @@ body{
     -webkit-overflow-scrolling: touch;
     scroll-snap-type: x mandatory;
     padding: 20px 10px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
 /* Esconde a barra de rolagem mas mantém a funcionalidade */
@@ -240,7 +251,6 @@ body{
 
 .section-tech{
     width: 100%;
-    min-height: 100vh;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -325,7 +335,6 @@ body{
 
 .section-contact{
     width: 100%;
-    min-height: 100vh;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -474,4 +483,174 @@ body{
     resize: vertical;
     min-height: 120px;
     max-height: 250px;
+}
+
+
+
+/* ---!!! CSS PAGE APRENDIZADO !!!--- */
+
+/* TITULO  */
+
+.titulo-page {
+    position: relative;
+    display: inline-block;
+    padding: 20px;
+}
+
+.titulo-page::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(
+        circle,
+        rgba(178, 146, 255, 0.03) 0%,  /* cor do purple-300 bem suave */
+        rgba(255, 255, 255, 0.02) 50%,
+        transparent 100%
+    );
+    z-index: -1;
+    filter: blur(50px); /* adiciona um blur suave */
+}
+
+.titulo-page h2 {
+    text-align: center;
+    font-weight: 200;
+    font-size: 18px;
+    color: var(--gray-300);
+}
+
+/* SECTION COM OS CONTAINERS */
+.section-page{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.section-page .container{
+    width: 85%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    border-radius: 55px;
+    border: 2px solid var(--gray-700);
+}
+
+.container .content-left{
+    width: 75%;
+    padding: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+.content-left h3{
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: var(--white);
+}
+
+.content-left p{
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: var(--purple-300);
+}
+
+.content-left span{
+    font-size: 8px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: var(--gray-400);
+}
+
+
+.container .content-right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+    padding: 20px;
+    list-style: none;
+
+}
+
+
+.content-right li a{
+    font-weight: 500;
+    font-size: 14px;
+    text-decoration: none;
+    color: var(--green-500);
+}
+
+.content-right li a:hover{
+    color: var(--gray-400);
+}
+
+
+/* FOOTER OF PAGE */
+footer{
+    width: 85%;
+    padding: 40px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+footer .siga-me{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    padding: 16px 30px;
+    border-radius: 80px;
+    background-color: var(--gray-800);
+}
+
+.siga-me h4{
+    font-weight: normal;
+    color: var(--gray-400);
+}
+.siga-me .icons ul{
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}
+
+footer span{
+    position: relative;
+    left: 35px;
+    font-size:smaller;
+    color: var(--white);
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (max-width: 600px) {
+    .section-aprendizado .container{
+        justify-content: flex-start;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+}
+
+
+
+/* ---!!! CSS PAGE EXPERIENCIA !!!--- */
+.main-titulo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 25px;
 }
