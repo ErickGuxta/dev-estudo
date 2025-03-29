@@ -1,21 +1,24 @@
 @import url('https://meyerweb.com/eric/tools/css/reset/reset.css');
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
-:root{
+:root {
     /* gray tons */
     --gray-900: #0C0C0D;
     --gray-800: #131313;
     --gray-700: #272727;
     --gray-400: #6F6F6F;
     --gray-300: #C8C8C8;
-    --green-500:#5FB9B0;
-    --purple-300:#B292FF;
-    --white:#FFFFFF;
+    --green-500: #5FB9B0;
+    --purple-300: #B292FF;
+    --white: #FFFFFF;
     --gray-gradient: linear-gradient(to right, #232323 0%, #434343 49%, #232323 100%);
 }
 
+html {
+    scroll-behavior: smooth;
+}
 
-body{
+body {
     max-width: 100vw;
     display: flex;
     font-family: Raleway;
@@ -24,7 +27,7 @@ body{
     background-image: url("../img/home.png");
 }
 
-.container{
+.container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -36,27 +39,24 @@ body{
 }
 
 /* -------- NAV BAR ---------- */
-.navbar{
+.navbar {
     width: 358px;
     height: 28px;
     padding: 10px 36px 10px 36px;
     border-radius: 100px;
-    
+
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: row;
     gap: 32px;
-    
+
     background: rgba(33, 31, 35, 0.8);
-    backdrop-filter: blur(8px);
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
-
-
 }
 
 
-.navbar .text ul{
+.navbar .text ul {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -64,26 +64,23 @@ body{
     gap: 30px;
 }
 
-.navbar .text ul li{
+.navbar .text ul li {
     font-size: 14px;
     font-weight: 300;
     cursor: pointer;
 }
 
-.navbar .text ul li a{
+.navbar .text ul li a {
     text-decoration: none;
     color: var(--white);
 }
 
-.navbar .text ul li a:hover{
+.navbar .text ul li a:hover {
     font-weight: 500;
     color: var(--purple-300);
 }
 
-
-
-
-.navbar .icons ul{
+.navbar .icons ul {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -91,20 +88,20 @@ body{
     gap: 9px;
 }
 
-.icons ul li img{
+.icons ul li img {
     width: 18px;
     height: 18px;
     cursor: pointer;
     transition: 500ms linear;
 }
 
-.icons ul li img:hover{
+.icons ul li img:hover {
     transform: scale(1.1);
 }
 
 /* -------- SECTION MAIN---------- */
 
-.section-main{
+.section-main {
     width: 100%;
     display: flex;
     justify-content: space-around;
@@ -114,7 +111,7 @@ body{
 
 }
 
-.section-main .container-left{
+.section-main .container-left {
     width: 45%;
     padding: 5px;
     display: flex;
@@ -123,44 +120,48 @@ body{
     gap: 16px;
 }
 
-.container-left h1{
+.container-left h1 {
     color: var(--white);
     font-size: 44px;
     font-weight: 500;
 }
 
-.container-left .description p{
+.container-left .description p {
     color: var(--gray-400);
     font-size: 16px;
     line-height: 1.9;
 }
 
-.container-left .buttons{
+.container-left .buttons {
     display: flex;
     justify-content: flex-start;
     align-items: center;
     gap: 24px;
 }
 
-.buttons button{
+.buttons button {
     width: 116px;
-    height:28px;
+    height: 28px;
     border: none;
     border-radius: 100px;
     background-color: var(--white);
-    color: var(--gray-900);
     font-size: 10px;
     font-weight: bold;
     cursor: pointer;
     transition: 500ms linear;
 }
 
-.buttons button:hover{
-    transform: scale(1.1); 
+.buttons button a {
+    color: var(--gray-900);
 
 }
 
-.buttons a{
+.buttons button:hover {
+    transform: scale(1.1);
+
+}
+
+.buttons a {
     text-decoration: none;
     color: var(--purple-300);
     font-size: 10px;
@@ -169,7 +170,7 @@ body{
 
 /* section-projects */
 
-.section-projects{
+.section-projects {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -178,18 +179,17 @@ body{
     overflow: hidden;
 }
 
-.section-projects .container-projects{
+.section-projects .container-projects {
     width: 100%;
     max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+    margin: 0px 62px;
     display: flex;
     flex-direction: column;
     gap: 30px;
 }
 
 
-.titulo h2{
+.titulo h2 {
     color: var(--gray-300);
     font-weight: normal;
     font-size: 38px;
@@ -249,7 +249,7 @@ body{
 
 /* -------- SECTION TECHNOLOGICS---------- */
 
-.section-tech{
+.section-tech {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -258,25 +258,25 @@ body{
     overflow: hidden;
 }
 
-.section-tech .container-tech{
+.section-tech .container-tech {
     display: flex;
     flex-direction: column;
     gap: 38px;
-    padding: 62px;
+    margin: 0px 62px;
 }
 
-.titulo-tech{
+.titulo-tech {
     display: flex;
 }
 
-.titulo-tech h2{
+.titulo-tech h2 {
     color: var(--gray-300);
     font-weight: normal;
     font-size: 38px;
     margin-bottom: 38px;
 }
 
-.containers-tecnologia{
+.containers-tecnologia {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -286,7 +286,7 @@ body{
 
 }
 
-.containers-tecnologia > div{
+.containers-tecnologia>div {
     width: 265px;
     height: 280px;
     display: flex;
@@ -296,14 +296,15 @@ body{
 
     border-radius: 12px;
     border: solid 2px var(--gray-700);
-    
+
     cursor: pointer;
     transition: 500ms linear;
 
 }
 
-.containers-tecnologia > div:hover{
-    transform: scale(1.1); /* Aumenta q div */
+.containers-tecnologia>div:hover {
+    transform: scale(1.1);
+    /* Aumenta q div */
     box-shadow: 0 8px 20px rgba(52, 36, 66, 0.3);
 
 }
@@ -333,7 +334,7 @@ body{
 
 /* -------- SECTION CONTACT---------- */
 
-.section-contact{
+.section-contact {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -342,16 +343,16 @@ body{
     overflow: hidden;
 }
 
-.section-contact .container-contact{
+.section-contact .container-contact {
     display: flex;
     flex-direction: column;
     gap: 38px;
-    padding: 62px;
+    margin: 0px 62px;
 }
 
 
 
-.titulo-contact h2{
+.titulo-contact h2 {
     color: var(--gray-300);
     font-weight: normal;
     font-size: 38px;
@@ -361,26 +362,26 @@ body{
 
 /* -------- PARTE DO SIGA-ME E FORMULARIO---------- */
 
-.container-form{
+.container-form {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 20px;
 }
 
-.container-form .container-left{
+.container-form .container-left {
     width: 25%;
     display: flex;
     flex-direction: column;
     gap: 8px;
 }
 
-.container-form .container-left h3{
+.container-form .container-left h3 {
     font-size: 28px;
     font-weight: 500;
 }
 
-.container-form .container-left .social-medias{
+.container-form .container-left .social-medias {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -388,32 +389,30 @@ body{
     gap: 10px;
 }
 
-.container-form .container-left .social-medias a img{
+.container-form .container-left .social-medias a img {
     width: 20px;
     height: 20px;
     cursor: pointer;
     transition: 500ms linear;
 }
 
-.container-form .container-left .social-medias a img:hover{
+.container-form .container-left .social-medias a img:hover {
     transform: scale(1.1);
 }
 
 
-.container-form .form{
+.container-form .form {
     width: 75%;
 }
 
-.container-form form{
+.container-form form {
     display: flex;
-    justify-content: center;    
+    justify-content: center;
     flex-direction: column;
     gap: 32px;
-
-
 }
 
-.container-form form input{
+.container-form form input {
     border: none;
     border-radius: 32px;
     background-color: var(--gray-800);
@@ -505,14 +504,14 @@ body{
     transform: translate(-50%, -50%);
     width: 300px;
     height: 300px;
-    background: radial-gradient(
-        circle,
-        rgba(178, 146, 255, 0.03) 0%,  /* cor do purple-300 bem suave */
-        rgba(255, 255, 255, 0.02) 50%,
-        transparent 100%
-    );
+    background: radial-gradient(circle,
+            rgba(178, 146, 255, 0.03) 0%,
+            /* cor do purple-300 bem suave */
+            rgba(255, 255, 255, 0.02) 50%,
+            transparent 100%);
     z-index: -1;
-    filter: blur(50px); /* adiciona um blur suave */
+    filter: blur(50px);
+    /* adiciona um blur suave */
 }
 
 .titulo-page h2 {
@@ -523,7 +522,7 @@ body{
 }
 
 /* SECTION COM OS CONTAINERS */
-.section-page{
+.section-page {
     width: 100%;
     min-height: 100vh;
     display: flex;
@@ -533,17 +532,18 @@ body{
     gap: 25px;
 }
 
-.section-page .container{
+.section-page .container {
     width: 85%;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: stretch;
     flex-direction: row;
+    overflow: hidden;
     border-radius: 55px;
     border: 2px solid var(--gray-700);
 }
 
-.container .content-left{
+.container .content-left {
     width: 75%;
     padding: 20px;
 
@@ -555,20 +555,20 @@ body{
 }
 
 
-.content-left h3{
+.content-left h3 {
     font-weight: 600;
     letter-spacing: 1px;
     color: var(--white);
 }
 
-.content-left p{
+.content-left p {
     font-size: 12px;
     font-weight: 400;
     letter-spacing: 1px;
     color: var(--purple-300);
 }
 
-.content-left span{
+.content-left span {
     font-size: 8px;
     font-weight: 500;
     letter-spacing: 1px;
@@ -576,7 +576,7 @@ body{
 }
 
 
-.container .content-right{
+.container .content-right {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -587,20 +587,96 @@ body{
 }
 
 
-.content-right li a{
+.content-right li a {
     font-weight: 500;
     font-size: 14px;
     text-decoration: none;
     color: var(--green-500);
 }
 
-.content-right li a:hover{
+.content-right li a:hover {
     color: var(--gray-400);
 }
 
 
-/* FOOTER OF PAGE */
-footer{
+/* ---!!! CSS PAGE EXPERIENCIA !!!--- */
+.main-titulo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.section-page .container-experience {
+    width: 85%;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-direction: row;
+    overflow: hidden;
+    gap: 25px;
+    border-radius: 55px;
+    border: 2px solid var(--gray-700);
+}
+
+.container-experience .content-left {
+    width: 30%;
+    padding: 40px;
+    display: flex;
+    justify-content: start;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+
+.content-left h3 {
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: var(--white);
+}
+
+.content-left p {
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: var(--purple-300);
+}
+
+.content-left span {
+    line-height: 12px;
+    font-size: 8px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: var(--gray-400);
+}
+
+
+.container-experience .content-right {
+    width: 70%;
+    padding: 40px;
+    display: flex;
+    justify-content: start;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.container-experience .content-right h3 {
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: var(--purple-300);
+}
+
+.container-experience .content-right p {
+    line-height: 24px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    color: var(--gray-400);
+}
+
+/* FOOTER OF PAGES */
+footer {
     width: 85%;
     padding: 40px 0;
     display: flex;
@@ -608,7 +684,7 @@ footer{
     gap: 16px;
 }
 
-footer .siga-me{
+footer .siga-me {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -618,39 +694,104 @@ footer .siga-me{
     background-color: var(--gray-800);
 }
 
-.siga-me h4{
+.siga-me h4 {
     font-weight: normal;
     color: var(--gray-400);
 }
-.siga-me .icons ul{
+
+.siga-me .icons ul {
     display: flex;
     flex-direction: row;
     gap: 8px;
 }
 
-footer span{
+footer span {
     position: relative;
     left: 35px;
-    font-size:smaller;
+    font-size: smaller;
     color: var(--white);
 }
 
-/* Small devices (portrait tablets and large phones, 600px and up) */
+/* MEDIA QUERYES */
+
 @media only screen and (max-width: 600px) {
-    .section-aprendizado .container{
-        justify-content: flex-start;
+    .navbar {
+        width: 224px;
+        height: 36px;
+    }
+
+    .navbar .icons {
+        display: none;
+    }
+
+    /* responsividade page home */
+    .section-main {
+        padding: 0;
+
+    }
+
+    .section-main .container-left {
+        width: 100%;
+        margin-top: 56px;
+        justify-content: center;
+        align-items: center;
+        gap: 24px;
+    }
+
+    .section-main .container-left .description {
+        text-align: center;
+    }
+
+    .section-main .container-left .buttons {
+        flex-direction: column;
+    }
+
+    .section-tech .container-tech .titulo-tech h2 {
+        text-align: center;
+        font-size: 30px;
+    }
+
+    .section-contact .container-form .container-left {
+        display: none;
+    }
+
+    .container-contact .titulo-contact h2 {
+        text-align: center;
+    }
+
+    .container-contact .form {
+        width: 100%;
+    }
+
+    /* responsividade page aprendizado */
+    .section-page .container {
+        row-gap: 20px;
+        justify-content: center;
         align-items: center;
         flex-wrap: wrap;
+
     }
-}
 
+    .container .content-left {
+        width: 100%;
+    }
 
+    .container .content-right {
+        width: 100%;
+    }
 
-/* ---!!! CSS PAGE EXPERIENCIA !!!--- */
-.main-titulo{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 25px;
+    /* responsividade page experience */
+    .container-experience {
+        justify-content: center;
+        align-items: start;
+        flex-wrap: wrap;
+    }
+
+    .container-experience .content-left {
+        width: 100%;
+    }
+
+    .container-experience .content-right {
+        width: 100%;
+    }
 }
