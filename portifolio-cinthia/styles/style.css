@@ -112,22 +112,35 @@ body {
 
 .section-main {
     width: 100%;
+    padding: 10px 0;
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-start;
     flex-direction: row;
     flex-wrap: wrap-reverse;
-    padding: 40px 0;
 }
 
 .section-main .container-left {
-    width: 45%;
+    width: 70%;
     padding: 5px;
+    margin: 0px 62px;
     display: flex;
     justify-content: center;
     flex-direction: column;
     gap: 16px;
 }
 
+.container-left .titulo-principal{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.container-left .titulo-principal img{
+    width: 100px;
+    height: 100px;
+}
 .container-left h1 {
     color: var(--white);
     font-size: 44px;
@@ -247,12 +260,52 @@ body {
     position: relative;
 }
 
+.carousel-item img{
+    width: 100%;
+}
+
 /* Efeito de expansão ao passar o mouse */
 .carousel-item:hover {
     transform: scale(1.05);
     box-shadow: 0 8px 20px rgba(52, 36, 66, 0.3);
     z-index: 10;
 }
+
+/* --------- SECTION DOS TEXTOS COM EFEITO ---------*/
+
+.section-efeito {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 40px 0;
+    overflow: hidden;
+}
+
+.section-efeito .container-texts {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 38px;
+    margin: 0px 62px;
+}
+
+.container-texts h3{
+    font-weight: 500;
+    font-size: 50px;
+    line-height: 55px;
+}
+.container-texts h3{
+}
+
+.container-texts h3{
+}
+
+.container-texts h3{
+}
+
 
 
 /* -------- SECTION TECHNOLOGICS---------- */
