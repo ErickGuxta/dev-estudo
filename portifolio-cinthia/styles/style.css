@@ -271,42 +271,6 @@ body {
     z-index: 10;
 }
 
-/* --------- SECTION DOS TEXTOS COM EFEITO ---------*/
-
-.section-efeito {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 40px 0;
-    overflow: hidden;
-}
-
-.section-efeito .container-texts {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 38px;
-    margin: 0px 62px;
-}
-
-.container-texts h3{
-    font-weight: 500;
-    font-size: 50px;
-    line-height: 55px;
-}
-.container-texts h3{
-}
-
-.container-texts h3{
-}
-
-.container-texts h3{
-}
-
-
 
 /* -------- SECTION TECHNOLOGICS---------- */
 
@@ -964,4 +928,85 @@ footer span {
 @keyframes blink {
     0%, 100% { opacity: 1; }
     50% { opacity: 0; }
+}
+
+
+/* PORTIFOLIO CINTHIA */
+
+/* --------- SECTION DOS TEXTOS COM EFEITO ---------*/
+
+.section-efeito {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 40px 0;
+    overflow: hidden;
+    position: relative;
+
+}
+
+.section-efeito::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 85%;
+    height: 65%;
+    background: radial-gradient(circle,
+        rgba(88, 17, 255, 0.4) 0%,
+        rgba(88, 17, 255, 0.1) 40%,
+        transparent 100%);
+    filter: blur(40px);
+    z-index: -1;
+    border-radius: 50%;
+}
+
+
+.section-efeito .container-texts {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 38px;
+    margin: 0px 62px;
+    position: relative;
+    z-index: 1;
+    background: none;
+}
+
+.container-texts h3{
+    font-weight: 500;
+    font-size: 50px;
+    line-height: 55px;
+}
+.container-texts .cor1{
+    color: #C69AFF;
+
+}
+
+.container-texts .cor2{
+    color: #9F53FF;
+}
+
+.container-texts .cor3{
+    color: #6104D6;
+}
+
+.titulo-page::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle,
+            rgba(178, 146, 255, 0.03) 0%,
+            rgba(255, 255, 255, 0.02) 50%,
+            transparent 100%);
+    z-index: -1;
+    filter: blur(50px);
 }
