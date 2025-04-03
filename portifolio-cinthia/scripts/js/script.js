@@ -18,19 +18,3 @@ document.addEventListener("DOMContentLoaded", function(){
     digitar()
 })
 
-document.getElementById("contactForm").addEventListener("submit", async function (element) {
-    element.preventDefault();
-
-    const formData = new FormData(element.target);
-    const response = await fetch("send-email.php", {
-        method: "POST",
-        bady: formData
-    });
-
-    const statusMsg = document.getElementById("statusMsg");
-    if (resposta.ok) {
-        statusMsg.textContent = "mensagem enviada com sucesso"
-    } else{
-        statusMsg.textContent = "erro ao enviar mensagem";
-    }    
-})
