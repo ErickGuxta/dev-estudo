@@ -982,16 +982,17 @@ footer span {
     font-size: 50px;
     line-height: 55px;
 }
-.container-texts .cor1{
+
+.container-texts h3:first-child{
     color: #C69AFF;
 
 }
 
-.container-texts .cor2{
+.container-texts h3:nth-child(2){
     color: #9F53FF;
 }
 
-.container-texts .cor3{
+.container-texts h3:last-child{
     color: #6104D6;
 }
 
