@@ -511,238 +511,6 @@ body {
 
 
 
-/* ---!!! CSS PAGE APRENDIZADO !!!--- */
-
-/* TITULO  */
-
-.titulo-page {
-    position: relative;
-    display: inline-block;
-    padding: 20px;
-}
-
-.titulo-page::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 300px;
-    height: 300px;
-    background: radial-gradient(circle,
-            rgba(178, 146, 255, 0.03) 0%,
-            rgba(255, 255, 255, 0.02) 50%,
-            transparent 100%);
-    z-index: -1;
-    filter: blur(50px);
-}
-
-.titulo-page h2 {
-    text-align: center;
-    font-weight: 200;
-    font-size: 18px;
-    color: var(--gray-300);
-}
-
-/* SECTION COM OS CONTAINERS */
-.section-page {
-    width: 100%;
-    min-height: 100vh;
-    display: flex;
-    justify-content: space-around;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 25px;
-}
-
-.section-page .container {
-    width: 85%;
-    display: flex;
-    justify-content: center;
-    align-items: stretch;
-    flex-direction: row;
-    overflow: hidden;
-    border-radius: 55px;
-    border: 2px solid var(--gray-700);
-}
-
-.container .content-left {
-    width: 75%;
-    padding: 20px;
-
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 10px;
-}
-
-
-.content-left h3 {
-    font-weight: 600;
-    letter-spacing: 1px;
-    color: var(--white);
-}
-
-.content-left p {
-    font-size: 12px;
-    font-weight: 400;
-    letter-spacing: 1px;
-    color: var(--purple-300);
-}
-
-.content-left span {
-    font-size: 8px;
-    font-weight: 500;
-    letter-spacing: 1px;
-    color: var(--gray-400);
-}
-
-
-.container .content-right {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 25%;
-    padding: 20px;
-    list-style: none;
-
-}
-
-
-.content-right li a {
-    font-weight: 500;
-    font-size: 14px;
-    text-decoration: none;
-    color: var(--green-500);
-}
-
-.content-right li a:hover {
-    color: var(--gray-400);
-}
-
-
-/* ---!!! CSS PAGE EXPERIENCIA !!!--- */
-.main-titulo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 25px;
-}
-
-.section-page .container-experience {
-    width: 85%;
-    display: flex;
-    justify-content: center;
-    align-items: stretch;
-    flex-direction: row;
-    overflow: hidden;
-    gap: 25px;
-    border-radius: 55px;
-    border: 2px solid var(--gray-700);
-}
-
-.container-experience .content-left {
-    width: 30%;
-    padding: 40px;
-    display: flex;
-    justify-content: start;
-    align-items: flex-start;
-    flex-direction: column;
-}
-
-
-.content-left h3 {
-    font-weight: 600;
-    letter-spacing: 1px;
-    color: var(--white);
-}
-
-.content-left p {
-    font-size: 12px;
-    font-weight: 400;
-    letter-spacing: 1px;
-    color: var(--purple-300);
-}
-
-.content-left span {
-    line-height: 12px;
-    font-size: 8px;
-    font-weight: 500;
-    letter-spacing: 1px;
-    color: var(--gray-400);
-}
-
-
-.container-experience .content-right {
-    width: 70%;
-    padding: 40px;
-    display: flex;
-    justify-content: start;
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.container-experience .content-right h3 {
-    font-weight: 500;
-    letter-spacing: 1px;
-    color: var(--purple-300);
-}
-
-.container-experience .content-right p {
-    line-height: 24px;
-    font-weight: 300;
-    letter-spacing: 1px;
-    color: var(--gray-400);
-}
-
-/* FOOTER OF PAGES */
-footer {
-    width: 85%;
-    padding: 40px 0;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-}
-
-footer .siga-me {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: row;
-    padding: 16px 30px;
-    border-radius: 80px;
-    background-color: var(--gray-800);
-}
-
-.siga-me h4 {
-    font-weight: normal;
-    color: var(--gray-400);
-}
-
-.siga-me .icons ul {
-    display: flex;
-    flex-direction: row;
-    gap: 8px;
-}
-.siga-me .icons ul img{
-    width: 18px;
-    height: 18px;
-    cursor: pointer;
-    transition: 500ms linear;
-}
-
-.sigam-me .icons ul li img:hover {
-    transform: scale(1.1);
-}
-footer span {
-    position: relative;
-    left: 35px;
-    font-size: smaller;
-    color: var(--white);
-}
 
 /* MEDIA QUERYES */
 
@@ -757,7 +525,31 @@ footer span {
         display: none;
     }
 
-    /* responsividade page home */
+    .titulo-principal{
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap-reverse;        
+        width: 100%;
+    }
+
+    .titulo-principal img{
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 15px;
+    }
+
+    .titulo-principal h1{
+        text-align: center;
+    }
+
+    .section-efeito .container-texts h3{
+
+        font-weight: 500;
+        font-size: 40px;
+        line-height: 55px;
+        text-align: center;
+    }
+    /* responsividade page principal */
     .section-main {
         padding: 0;
     }
@@ -788,26 +580,6 @@ footer span {
         align-items: center;
     }
 
-    /* responsividade page aprendizado */
-
-
-    .container .content-left {
-        width: 100%;
-    }
-
-    .container .content-right {
-        width: 100%;
-    }
-
-    /* responsividade page experience */
-
-    .container-experience .content-left {
-        width: 100%;
-    }
-
-    .container-experience .content-right {
-        width: 100%;
-    }
 }
 
 /* RESPONSIVIDADE PARA CELULARES */
@@ -888,36 +660,8 @@ footer span {
     .container-contact .form {
         width: 100%;
     }
-    
-    /* Páginas de aprendizado e experiência */
-    .section-page .container,
-    .section-page .container-experience {
-        width: 90%;
-        border-radius: 25px;
-        flex-wrap: wrap;
-        align-items: flex-start;
-        justify-content: center;
-    }
-    
-    .container .content-left,
-    .container .content-right,
-    .container-experience .content-left,
-    .container-experience .content-right {
-        width: 100%;
-        padding: 15px;
-    }
-    
-    /* Footer */
-    footer {
-        width: 90%;
-    }
-    
-    footer .siga-me {
-        gap: 15px;
-        padding: 15px;
-    }
 }
-
+    
 /* ANIMAÇÃO DIGITAÇÃO */
 .typing::after {
     content: '|';
