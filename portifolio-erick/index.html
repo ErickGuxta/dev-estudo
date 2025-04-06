@@ -130,11 +130,11 @@
                             <a href="https://www.figma.com/files/team/1289631948202471981/all-projects?fuid=1289631946253685869"><img src="img/figma-icon.svg" alt="Icon figma"></a>
                         </div>
                     </div>
-                    <div class="form">
-                        <form method="post">
-                            <input placeholder="Digite seu nome" type="text" name="input-text">
-                            <input placeholder="Digite um e-mail válido" type="email" name="input-email">
-                            <textarea placeholder="Digite sua mensagem" name="input-mensage"></textarea>
+                    <div class="form" >
+                        <form id="form" method="POST">
+                            <input placeholder="Digite seu nome" type="text" name="input-text" id="name" required>
+                            <input placeholder="Digite um e-mail válido" type="email" name="input-email" id="email" required>
+                            <textarea placeholder="Digite sua mensagem" name="input-mensage" id="mensage" required></textarea>
                             <button type="submit">Enviar mensagem</button>
                         </form>
                     </div>
@@ -144,6 +144,5 @@
     </div>
 
 </body>
-
     <script src="scripts/js/script.js"></script>
 </html>
