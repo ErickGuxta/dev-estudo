@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Visualizador Selection Sort</title>
+  <style>
+    body {
+      background: #1e1e2f;
+      color: #fff;
+      font-family: sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+    .array-container {
+      display: flex;
+      justify-content: center;
+      align-items: end;
+      gap: 8px;
+      margin: 30px auto;
+    }
+    .bar {
+      width: 30px;
+      background: #3b82f6;
+      transition: all 0.3s;
+      border-radius: 6px 6px 0 0;
+    }
+    .bar.highlight {
+      background: #f59e0b;
+    }
+    .bar.min {
+      background: #ef4444;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background: #10b981;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #059669;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Visualizador do Selection Sort</h1>
+  <div class="array-container" id="array-container"></div>
+  <button onclick="startSort()">Iniciar Ordenação</button>
+
+  <script>
+    const sourceArray = [5, 3, 6, 2, 10];
+    const container = document.getElementById("array-container");
+
+    function renderArray(array, highlight = -1, minIndex = -1) {
+      container.innerHTML = "";
+      array.forEach((num, i) => {
+        const bar = document.createElement("div");
+        bar.classList.add("bar");
+        bar.style.height = `${num * 20}px`;
+        if (i === highlight) bar.classList.add("highlight");
+        if (i === minIndex) bar.classList.add("min");
+        container.appendChild(bar);
+      });
+    }
+
+    async function sleep(ms) {
+      return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    async function startSort() {
+      let array = [...sourceArray];
+      const novoArray = [];
+
+      while (array.length > 0) {
+        let menorIndice = 0;
+        let menorValor = array[0];
+        renderArray(array, -1, menorIndice);
+        await sleep(500);
+
+        for (let i = 1; i < array.length; i++) {
+          renderArray(array, i, menorIndice);
+          await sleep(400);
+          if (array[i] < menorValor) {
+            menorValor = array[i];
+            menorIndice = i;
+            renderArray(array, i, menorIndice);
+            await sleep(400);
+          }
+        }
+
+        novoArray.push(array.splice(menorIndice, 1)[0]);
+        renderArray(array);
+        await sleep(600);
+      }
+
+      // Exibir array final ordenado
+      container.innerHTML = "";
+      novoArray.forEach(num => {
+        const bar = document.createElement("div");
+        bar.classList.add("bar");
+        bar.style.height = `${num * 20}px`;
+        bar.style.background = "#10b981";
+        container.appendChild(bar);
+      });
+    }
+
+    renderArray(sourceArray);
+  </script>
+</body>
+</html>

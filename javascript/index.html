@@ -1,0 +1,217 @@
+
+<html><head><base href="." /><meta charset="utf-8" />
+    <title>3D Maze Game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      font-family: sans-serif;
+      background: #000;
+    }
+    
+    #gameContainer {
+      width: 100vw;
+      height: 100vh;
+      position: relative;
+    }
+    
+    #hud {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      color: #fff;
+      font-family: monospace;
+      background: rgba(0,0,0,0.7);
+      padding: 15px;
+      border-radius: 5px;
+    }
+    
+    .controls {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      color: white;
+      background: rgba(0,0,0,0.7);
+      padding: 10px;
+      border-radius: 5px;
+    }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    </head>
+    <body>
+    <div id="gameContainer">
+      <div id="hud">Time: <span id="timer">0</span>s</div>
+      <div class="controls">Use W,A,S,D to move | Find the exit!</div>
+    </div>
+    
+    <script>
+    class MazeGame {
+      constructor() {
+        this.scene = new THREE.Scene();
+        this.camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        this.renderer = new THREE.WebGLRenderer({ antialias: true });
+        this.renderer.setSize(window.innerWidth, window.innerHeight);
+        this.renderer.setClearColor(0x000000);
+        document.getElementById('gameContainer').appendChild(this.renderer.domElement);
+    
+        this.mazeSize = 15;
+        this.cellSize = 2;
+        this.walls = [];
+        this.playerPos = { x: 1, z: 1 };
+        this.startTime = Date.now();
+        this.maze = this.generateMaze(this.mazeSize, this.mazeSize);
+        
+        this.setupScene();
+        this.setupControls();
+        this.animate();
+      }
+    
+      generateMaze(width, height) {
+        // Initialize maze grid
+        let maze = Array(height).fill().map(() => Array(width).fill(1));
+        
+        const carve = (x, z) => {
+          maze[z][x] = 0;
+          const directions = [[0, 2], [2, 0], [0, -2], [-2, 0]].sort(() => Math.random() - 0.5);
+          
+          for (let [dx, dz] of directions) {
+            const newX = x + dx;
+            const newZ = z + dz;
+            if (newX > 0 && newX < width-1 && newZ > 0 && newZ < height-1 && maze[newZ][newX] === 1) {
+              maze[z + dz/2][x + dx/2] = 0;
+              carve(newX, newZ);
+            }
+          }
+        };
+    
+        carve(1, 1);
+        maze[height-2][width-2] = 2; // Exit
+        return maze;
+      }
+    
+      setupScene() {
+        // Lighting
+        const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
+        this.scene.add(ambientLight);
+        
+        const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
+        directionalLight.position.set(10, 20, 10);
+        this.scene.add(directionalLight);
+    
+        // Floor
+        const floorGeometry = new THREE.PlaneGeometry(this.mazeSize * this.cellSize, this.mazeSize * this.cellSize);
+        const floorMaterial = new THREE.MeshPhongMaterial({ color: 0x444444 });
+        const floor = new THREE.Mesh(floorGeometry, floorMaterial);
+        floor.rotation.x = -Math.PI / 2;
+        this.scene.add(floor);
+    
+        // Create maze walls
+        const wallGeometry = new THREE.BoxGeometry(this.cellSize, 2, this.cellSize);
+        const wallMaterial = new THREE.MeshPhongMaterial({ color: 0x808080 });
+        const exitMaterial = new THREE.MeshPhongMaterial({ color: 0x00ff00 });
+    
+        for (let z = 0; z < this.mazeSize; z++) {
+          for (let x = 0; x < this.mazeSize; x++) {
+            if (this.maze[z][x] === 1) {
+              const wall = new THREE.Mesh(wallGeometry, wallMaterial);
+              wall.position.set(
+                (x - this.mazeSize/2) * this.cellSize,
+                1,
+                (z - this.mazeSize/2) * this.cellSize
+              );
+              this.walls.push(wall);
+              this.scene.add(wall);
+            } else if (this.maze[z][x] === 2) {
+              const exit = new THREE.Mesh(wallGeometry, exitMaterial);
+              exit.position.set(
+                (x - this.mazeSize/2) * this.cellSize,
+                0.1,
+                (z - this.mazeSize/2) * this.cellSize
+              );
+              this.scene.add(exit);
+            }
+          }
+        }
+    
+        // Position camera
+        this.camera.position.set(
+          (this.playerPos.x - this.mazeSize/2) * this.cellSize,
+          1,
+          (this.playerPos.z - this.mazeSize/2) * this.cellSize
+        );
+      }
+    
+      setupControls() {
+        this.keys = {};
+        document.addEventListener('keydown', (e) => this.keys[e.key.toLowerCase()] = true);
+        document.addEventListener('keyup', (e) => this.keys[e.key.toLowerCase()] = false);
+        
+        this.moveSpeed = 0.1;
+        this.rotationSpeed = 0.03;
+        this.camera.rotation.order = 'YXZ';
+      }
+    
+      checkCollision(x, z) {
+        const gridX = Math.floor((x + this.mazeSize * this.cellSize/2) / this.cellSize);
+        const gridZ = Math.floor((z + this.mazeSize * this.cellSize/2) / this.cellSize);
+        
+        if (gridX < 0 || gridX >= this.mazeSize || gridZ < 0 || gridZ >= this.mazeSize) return true;
+        
+        // Check if reached exit
+        if (this.maze[gridZ][gridX] === 2) {
+          alert(`Congratulations! You completed the maze in ${Math.floor((Date.now() - this.startTime)/1000)} seconds!`);
+          location.reload();
+        }
+        
+        return this.maze[gridZ][gridX] === 1;
+      }
+    
+      update() {
+        // Update timer
+        document.getElementById('timer').textContent = Math.floor((Date.now() - this.startTime)/1000);
+    
+        if (this.keys['w']) {
+          const newX = this.camera.position.x - Math.sin(this.camera.rotation.y) * this.moveSpeed;
+          const newZ = this.camera.position.z - Math.cos(this.camera.rotation.y) * this.moveSpeed;
+          if (!this.checkCollision(newX, newZ)) {
+            this.camera.position.x = newX;
+            this.camera.position.z = newZ;
+          }
+        }
+        if (this.keys['s']) {
+          const newX = this.camera.position.x + Math.sin(this.camera.rotation.y) * this.moveSpeed;
+          const newZ = this.camera.position.z + Math.cos(this.camera.rotation.y) * this.moveSpeed;
+          if (!this.checkCollision(newX, newZ)) {
+            this.camera.position.x = newX;
+            this.camera.position.z = newZ;
+          }
+        }
+        if (this.keys['a']) {
+          this.camera.rotation.y += this.rotationSpeed;
+        }
+        if (this.keys['d']) {
+          this.camera.rotation.y -= this.rotationSpeed;
+        }
+      }
+    
+      animate() {
+        requestAnimationFrame(() => this.animate());
+        this.update();
+        this.renderer.render(this.scene, this.camera);
+      }
+    }
+    
+    // Initialize game
+    const game = new MazeGame();
+    
+    // Handle window resize
+    window.addEventListener('resize', () => {
+      game.camera.aspect = window.innerWidth / window.innerHeight;
+      game.camera.updateProjectionMatrix();
+      game.renderer.setSize(window.innerWidth, window.innerHeight);
+    });
+    </script>
+    </body>
+    </html>
+    
