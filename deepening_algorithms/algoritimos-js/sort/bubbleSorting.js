@@ -2,16 +2,20 @@ const arr = [3,2,1,4,6,5,7,9,8,10]
 
 const bubbleSort = arr => {
 
-    let n = arr.lenght;
+    let n = arr.length
+    for (let i = 0; i < n - 1; i++){
+        for (let j = 0; j < n - 1; j++) {
+            if (arr[j] > arr[j + 1] ) {
+                let temporario = arr[j];
 
-    for (let i=0; i < arr.lenght; i++){
-        for (let i = 0; i < array.length; i++) {
-            
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temporario;
+            }
         }
     }
+    return arr;
 
 }
 
 
-bubbleSort(arr)
-console.log(arr) // [1,2,3,4,5,6,7,8,9,10]
+console.log(bubbleSort(arr)); // [1,2,3,4,5,6,7,8,9,10]
