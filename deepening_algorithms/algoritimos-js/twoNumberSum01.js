@@ -8,10 +8,7 @@ function twoNumberSum(array, targetSum) {
     while (leftLimite < rightLimite) {
         let soma = arrayOrdenado[leftLimite] + arrayOrdenado[rightLimite];
         
-
-        if ((soma) === targetSum) {
-            return [arrayOrdenado[leftLimite], arrayOrdenado[rightLimite]];
-        } 
+        if ((soma) === targetSum) return [arrayOrdenado[leftLimite], arrayOrdenado[rightLimite]];
 
         // se a soma for menor que o target, o leftLimite é encrementado, se não, o rightLimite é decrementado 
         (soma) < targetSum ? leftLimite++ : rightLimite--; 
