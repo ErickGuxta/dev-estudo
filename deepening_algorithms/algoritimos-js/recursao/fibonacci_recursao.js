@@ -17,3 +17,4 @@ console.log("Fibonacci de 3:", fibonacci(3));  // 2
 console.log("Fibonacci de 4:", fibonacci(4));  // 3
 console.log("Fibonacci de 5:", fibonacci(5));  // 5
 
+// Sem recursao
