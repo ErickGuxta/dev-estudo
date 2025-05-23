@@ -1,14 +1,14 @@
-from math import *
-
 n = int(input());
 
-if n >= 2 and n <= 100:
-    print(n*n*(n-2))
-    print()
-    print()
-    print(8)
+if n == 2:
+    resposta = [0, 0, 0, 8]
 else:
-    print(0)
-    print(0)
-    print(0)
-    print(8)
+    resposta = [
+        (n-2)*(n-2)*(n-2),
+        (n-2)*(n-2)*6,
+        (n-2)*12,
+        8
+    ]
+
+for i in resposta:
+    print(i);
