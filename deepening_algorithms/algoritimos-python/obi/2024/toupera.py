@@ -8,21 +8,18 @@ for _ in range(t):
 
 p = int(input())
 
-possiveis = 0
+total = 0
 for _ in range(p):
     passeio = list(map(int, input().split()))
-    n = passeio[0] #numero de saloes
     saloes = passeio[1:] # saloes. usei 1: para fatiar, ou seja, começa pegando a partir do segundo elemento
     
-    valido = True
-    for i in range(n - 1):
-        atual = saloes[i]
-        proximo = saloes[i + 1]
-        if (atual, proximo) not in tuneis:
-            valido = False
+    #passeio[0] é a quantidade de saloes (N)
+    ok = True
+    for i in range(len(passeio[0]) - 1):
+        if (saloes[i], saloes[i + 1]) not in tuneis:
+            ok = False
             break
-    
-    if valido:
-        possiveis += 1
+    if ok:
+        total += 1
 
-print(possiveis)
+print(total)
