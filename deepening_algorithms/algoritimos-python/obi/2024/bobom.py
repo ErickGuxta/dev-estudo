@@ -1,6 +1,5 @@
 cartas = [input().strip() for _ in range(7)]
 carta_dominante = cartas[0][1]
-
 #A J Q K
 #C E O P
 
