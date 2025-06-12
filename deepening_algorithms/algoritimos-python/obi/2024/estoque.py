@@ -1,8 +1,6 @@
 #tipos(linhas) e tamanhos(colunas)
 m, n = map(int, input().split())
 
-
-
 estoque = []
 pecas_vendidas = 0
 
