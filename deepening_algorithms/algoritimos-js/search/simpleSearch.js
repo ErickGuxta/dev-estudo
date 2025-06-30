@@ -11,3 +11,4 @@ const search = (num) => {
 
 console.log(search(6));
 console.log(search(8))
+
