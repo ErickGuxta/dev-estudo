@@ -15,7 +15,7 @@ carros.append("carro4")  # Adiciona ao final
 carros.insert(0, "carro_insert") # indicando a posição a ser inserida
 
 carros.remove("carro2") #remove pelo valor
-ultimo_carro = carros.pop() #remove e retorna o último iten
+ultimo_carro = carros.pop() #remove e retorna o último item
  
 
 print(carros)
@@ -46,7 +46,7 @@ for chave in config:
     print(f"{chave}: {config[chave]}")
 
 #obter chaves e valores:
-todas_chaves = config.keys()
+todas_chaves  = config.keys()
 todos_valores = config.values()
 
 print(todas_chaves)

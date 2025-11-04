@@ -1,5 +1,5 @@
 print("Hello, World!")
-
+print
 #--------- variáveis ---------
 
 #são de tipagem dinâmica e são case-sensitive
