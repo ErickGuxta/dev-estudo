@@ -2,6 +2,9 @@
 
             #/// listas(list) ///
 
+import string
+
+
 carros = ["carro1", "carro2", "carro3", 5, False]
 
 #acessar:
@@ -13,6 +16,7 @@ carros[4] = True
 #adicionar e remover elementos:
 carros.append("carro4")  # Adiciona ao final
 carros.insert(0, "carro_insert") # indicando a posição a ser inserida
+carros.extend(["civic", "corola"]) # adiciona vários
 
 carros.remove("carro2") #remove pelo valor
 ultimo_carro = carros.pop() #remove e retorna o último item
@@ -29,6 +33,9 @@ print(r, g, b)
 
             #/// dicionários(dict) ///
 config = {"debug": True, "max_connections": 100}  
+misturado = {"chave": 1, 2: "valor", "lista": [1, 2, 3]}
+vazio = {}
+
 
 #acessar: obs: gera erro se a chava não existir
 var = config["debug"]
@@ -48,14 +55,19 @@ for chave in config:
 #obter chaves e valores:
 todas_chaves  = config.keys()
 todos_valores = config.values()
+todos_chave_valor = config.items() # Obter todos os pares chave-valor
 
 print(todas_chaves)
 print(todos_valores)
 
-            #/// conjuntos(set) ///
+            #/// conjuntos(set) ///s - Coleções ordenntos duplicados
+vogais = {"a", "e", "i", "o", "u"}   
+vazio = set()
 
-# Não permite elementos duplicados
-vogais = {"a", "e", "i", "o", "u"}                
+# Criando a partir de outras sequências
+vogais = set[string]("aeiou")  # {"a", "e", "i", "o", "u"}
+unicos = set[int]([1, 2, 2, 3, 3, 3, 4])  # {1, 2, 3, 4}
+
 
 # Adicionando elementos
 vogais.add("y")  # Em alguns idiomas, y pode ser considerada uma vogal
