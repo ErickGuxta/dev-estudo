@@ -1,17 +1,18 @@
-from typing import Counter
+from logging import info
 
-class Solution:
-    def firstUniqChar(self, s: str) -> int:
-        
-        ocorrencia = {}
 
-        for i in range(len(s)):
-            if ocorrencia.get(s[i]):
-                ocorrencia[s[i]] +=1
-            else:
-                ocorrencia[s[i]] = 1
-        
-        for i in range(len(s)):
-            if ocorrencia[s[i]] == 1:
-                return i
-        return -1
+class Node:
+    def __init__(self, value):
+        self.value = value
+        self.proximo = None
+
+# Criando nós
+carro = Node(2)
+novo_no = Node(6)
+
+
+# Ligando os nós
+carro.proximo = novo_no
+
+print(carro.value)
+print(carro.proximo.value)  # Imprime 2

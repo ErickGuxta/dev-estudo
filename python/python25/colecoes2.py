@@ -13,7 +13,7 @@ numeros.reverse()              # Inverte a ordem dos elementos
 
 ## Contagem e localização
 contagem = numeros.count(1)    # Retorna quantas vezes 1 aparece
-indice = numeros.index(5)      # Retorna o índice da primeira ocorrência de 5
+indice   = numeros.index(5)      # Retorna o índice da primeira ocorrência de 5
 
 ## Comprimento
 tamanho = len(numeros)         # Retorna o número de elementos na lista

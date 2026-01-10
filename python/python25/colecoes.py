@@ -18,8 +18,8 @@ carros.append("carro4")  # Adiciona ao final
 carros.insert(0, "carro_insert") # indicando a posição a ser inserida
 carros.extend(["civic", "corola"]) # adiciona vários
 
-carros.remove("carro2") #remove pelo valor
 ultimo_carro = carros.pop() #remove e retorna o último item
+carros.remove("carro2") #remove pelo valor
 
 print(carros)
 
@@ -49,8 +49,9 @@ misturado = {"chave": 1, 2: "valor", "lista": [1, 2, 3]}
 vazio = {}
 
 
-#acessar: obs: gera erro se a chava não existir
-var = config["debug"]
+#acessar: 
+#obs: gera erro se a chava não existir
+var  = config["debug"]
 var2 = config.get("teste", "mensagem que aparece se não existir a chave")
 
 

@@ -13,6 +13,7 @@ def view_task(tasks):
 
         name_tarefa = task["name"]
         print(f"{i+1}. [{status}] {name_tarefa}")
+
     return
 
 def update_task(tasks, number_task_update, name_task_update,):

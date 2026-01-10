@@ -20,7 +20,7 @@ print(nome_completo)
 
 #fatiamento
 tres_primeiras = nome[1:4] #a posição 4 é não incluso
-invertido = nome[0:5][::-1] #invertendo string
+invertido      = nome[0:5][::-1] #invertendo string
 print(invertido)
 
 
