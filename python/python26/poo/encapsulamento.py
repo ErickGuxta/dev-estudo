@@ -34,7 +34,7 @@ p1.get_metodo_privado()
 
 print("\n ----ENCAPSULAMENTO EXEMPLO 2----")
 
-'''criando uma classe com atributos e métodos privados'''
+'''criando uma classe com atributos e métodos PRIVADOS (__var)'''
 class ContaBancaria:
     def __init__(self, saldo) -> None:
         self.__saldo = saldo #atributo privado

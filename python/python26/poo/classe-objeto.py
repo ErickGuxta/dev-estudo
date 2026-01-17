@@ -6,7 +6,7 @@
 # Polimorfismo: usar a mesma interface para diferentes tipos de objetos
 
 # '''docstring()''' -> para documentar função da classe
-
+sobrenome = "Costa"
 #Classe
 class Pessoa:
     apelido = "Gusta"
@@ -19,6 +19,9 @@ class Pessoa:
     # Método qualquer
     def saudacao(self):
         return f"Ola, meu nome é {self.nome} e eu tenho {self.idade} anos!"
+
+    def get_sobrenome(self):
+        return sobrenome
 
 
 # Instanciando a classe -> OBJETO
@@ -34,6 +37,9 @@ print(pessoa1.nome)
 print("\n ----Modificando Atributos----")
 pessoa1.nome = "Nome modificado"
 print(pessoa1.nome)
+
+
+print(pessoa1.get_sobrenome())
 
 
     
