@@ -5,6 +5,7 @@ print("\n ----@classmethod e @staticmethod ----")
 
 # @classmethod
 # @staticmethod
+# @property
 
 class MinhaClasse:
     valor = 10 # Atributo de classe
@@ -54,7 +55,6 @@ class Carro:
             marca, modelo, ano = c.split(",")
             carros.append(cls(marca, modelo, int(ano)))
         return carros
-
 
 
 configuracoes = ("Toyota,Corolla,2022", "Toyota,Hilux,2024", "Volks,Golf,2020", "Chevrolet,Chevette,1980")

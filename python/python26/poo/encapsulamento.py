@@ -6,6 +6,7 @@
 # Polimorfismo: usar a mesma interface para diferentes tipos de objetos
 
 # '''docstring()''' -> para documentar função da classe
+# _protegido e __privado
 
 print("\n ----ENCAPSULAMENTO EXEMPLO 1----")
 
