@@ -61,7 +61,7 @@ print(f"Saldo atual: {conta1.consultar_saldo()}")
 conta1.sacar(900)
 
 
-#print(conta1.__saldo) #ERROR
+print(conta1.__saldo) #ERROR
 print(f"Saldo atual: {conta1.consultar_saldo()}")
 
 

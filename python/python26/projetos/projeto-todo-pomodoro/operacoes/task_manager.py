@@ -5,12 +5,12 @@ from datetime import datetime
 
 from entidades.task import Task
 
-
 """
 filtrar por prioridade
 filtrar por status
 
-create task
+create task OK
+
 
 listar_task
 get_task
@@ -68,4 +68,3 @@ class TodoManager:
             print("Erro: Entrada inválida. Título não pode ser vazio e prioridade deve ser 1, 2 ou 3.")
             return None
 
-    def

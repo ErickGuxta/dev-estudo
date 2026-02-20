@@ -8,6 +8,7 @@ class Task:
     status_concluido = "concluida"
 
 
+
     def __init__(self, titulo: str, prazo:str ,prioridade:int , descricao:str = ""):
         
         self.titulo      = titulo
@@ -27,6 +28,13 @@ class Task:
 
         self.status = Task.status_concluido
         self.data_conclusão = datetime.now()
+
+    @classmethod
+    def get_total_tasks(cls):
+
+        """Método de classe para obter o número total de tasks criadas."""
+
+        return cls._total_contas
 
     # retorno da string
     def __str__(self):
