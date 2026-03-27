@@ -1,5 +1,4 @@
-print("Hello, World!")
-print
+print("Olá, Mundo!!")
 #--------- variáveis ---------
 
 #são de tipagem dinâmica e são case-sensitive
