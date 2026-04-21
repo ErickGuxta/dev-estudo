@@ -1,0 +1,16 @@
+{% extends "_base.html" %}
+
+{% block title %}Excluir Partida{% endblock %}
+
+{% block content %}
+<section>
+    <h1 class="h3 mb-3">Excluir partida</h1>
+    <p class="page-muted">Tem certeza que deseja excluir a partida entre <strong>{{ partida.dupla_um }}</strong> e <strong>{{ partida.dupla_dois }}</strong>?</p>
+
+    <form method="post" class="d-flex gap-2">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Excluir</button>
+        <a href="{% url 'listar_partidas' %}" class="btn btn-secondary">Cancelar</a>
+    </form>
+</section>
+{% endblock %}

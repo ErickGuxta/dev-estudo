@@ -1,0 +1,13 @@
+{% extends "_base.html" %}
+
+{% block content %}
+<h1 class="h3 mb-3">Deletar pet</h1>
+
+<p>Tem certeza que deseja deletar o pet <strong>{{ pet.nome }}</strong>?</p>
+
+<form action="" method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Deletar</button>
+    <a href="{% url 'listar_pets' %}" class="btn btn-secondary">Cancelar</a>
+</form>
+{% endblock %}

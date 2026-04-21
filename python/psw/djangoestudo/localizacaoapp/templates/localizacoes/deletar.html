@@ -1,0 +1,13 @@
+{% extends "_base_localizacao.html" %}
+
+{% block content %}
+<h1 class="h3 mb-3">Deletar localizacao</h1>
+
+<p>Tem certeza que deseja deletar a localizacao <strong>{{ localizacao.status }}</strong>?</p>
+
+<form action="" method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Deletar</button>
+    <a href="{% url 'localizacaoapp:listar_localizacoes' %}" class="btn btn-secondary">Cancelar</a>
+</form>
+{% endblock %}

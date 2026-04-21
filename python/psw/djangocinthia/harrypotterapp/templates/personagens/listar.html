@@ -1,0 +1,55 @@
+{% extends "_base.html" %}
+
+{% block content %}
+<section>
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h1 class="h3 mb-1">Visualizar personagens</h1>
+            <p class="tema-muted mb-0">Lista completa dos personagens do mundo bruxo.</p>
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-hover align-middle">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Casa</th>
+                    <th scope="col">Patrono</th>
+                    <th scope="col">Nascimento</th>
+                    <th scope="col">Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for personagem in personagens %}
+                    <tr>
+                        <td>{{ personagem.id }}</td>
+                        <td>{{ personagem.nome }}</td>
+                        <td>{{ personagem.casa }}</td>
+                        <td>{{ personagem.patrono }}</td>
+                        <td>{{ personagem.data_nascimento|date:"d/m/Y" }}</td>
+                        <td class="d-flex gap-2">
+                            <a class="btn btn-sm btn-outline-primary" href="{% url 'details' personagem.id %}">
+                                Detalhes
+                            </a>
+                            <a class="btn btn-sm btn-outline-secondary" href="{% url 'update' personagem.id %}">
+                                Editar
+                            </a>
+                            <a class="btn btn-sm btn-outline-danger" href="{% url 'delete' personagem.id %}">
+                                Deletar
+                            </a>
+                        </td>
+                    </tr>
+                {% empty %}
+                    <tr>
+                        <td colspan="6" class="text-center tema-muted py-4">
+                            Nenhum personagem cadastrado até o momento.
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends "_base.html" %}
+
+{% block content %}
+<section>
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h1 class="h3 mb-1">Detalhes do pet</h1>
+            <p class="pet-muted mb-0">Informacoes completas para acompanhamento.</p>
+        </div>
+        <a href="{% url 'listar_pets' %}" class="btn btn-outline-secondary">Voltar</a>
+    </div>
+
+    <div class="row g-3">
+        <div class="col-12 col-md-6">
+            <div class="card pet-card border-0 h-100">
+                <div class="card-body">
+                    <h2 class="h6 mb-3" style="color: #4338ca;">Dados principais</h2>
+                    <p class="mb-2"><strong>ID:</strong> {{ pet.id }}</p>
+                    <p class="mb-2"><strong>Nome:</strong> {{ pet.nome }}</p>
+                    <p class="mb-2"><strong>Raca:</strong> {{ pet.raca }}</p>
+                    <p class="mb-0"><strong>Cor:</strong> {{ pet.cor }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-6">
+            <div class="card pet-card border-0 h-100">
+                <div class="card-body">
+                    <h2 class="h6 mb-3" style="color: #4338ca;">Historico</h2>
+                    <p class="mb-2">
+                        <strong>Data de nascimento:</strong> {{ pet.data_nascimento|date:"d/m/Y" }}
+                    </p>
+                    <p class="mb-0 pet-muted">
+                        Detalhes do pet.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

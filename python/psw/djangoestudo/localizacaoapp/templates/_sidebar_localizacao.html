@@ -1,0 +1,17 @@
+<aside class="col-12 col-md-3 col-lg-2 p-3" style="background-color: #0f172a;">
+    <nav class="nav flex-column gap-2">
+        <span class="text-uppercase text-white-50 small fw-semibold mb-2">Menu</span>
+        <a class="nav-link text-white rounded px-3 py-2" href="{% url 'localizacaoapp:index' %}">
+            Inicio
+        </a>
+        <a class="nav-link text-white rounded px-3 py-2" href="{% url 'listar_pets' %}">
+            Ir para PetApp
+        </a>
+        <a class="nav-link text-white rounded px-3 py-2" href="{% url 'localizacaoapp:listar_localizacoes' %}">
+            Listar localizacoes
+        </a>
+        <a class="nav-link text-white rounded px-3 py-2" href="{% url 'localizacaoapp:create' %}">
+            Nova localizacao
+        </a>
+    </nav>
+</aside>

@@ -1,0 +1,56 @@
+{% extends "_base_localizacao.html" %}
+
+{% block content %}
+<section>
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h1 class="h3 mb-1">Visualizar localizacoes</h1>
+            <p class="pet-muted mb-0">Lista completa para consulta rapida.</p>
+        </div>
+        <a class="btn btn-primary" href="{% url 'localizacaoapp:create' %}">Adicionar localizacao</a>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-hover align-middle">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Historico</th>
+                    <th scope="col">Coleira</th>
+                    <th scope="col">Alertas</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Acoes</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for localizacao in localizacoes %}
+                    <tr>
+                        <td>{{ localizacao.id }}</td>
+                        <td>{{ localizacao.historico|truncatechars:25 }}</td>
+                        <td>{{ localizacao.integracao_coleira }}</td>
+                        <td>{{ localizacao.alertas }}</td>
+                        <td>{{ localizacao.status }}</td>
+                        <td class="d-flex gap-2">
+                            <a class="btn btn-sm btn-outline-primary" href="{% url 'localizacaoapp:details' localizacao.id %}">
+                                Detalhes
+                            </a>
+                            <a class="btn btn-sm btn-outline-secondary" href="{% url 'localizacaoapp:update' localizacao.id %}">
+                                Editar
+                            </a>
+                            <a class="btn btn-sm btn-outline-danger" href="{% url 'localizacaoapp:delete' localizacao.id %}">
+                                Deletar
+                            </a>
+                        </td>
+                    </tr>
+                {% empty %}
+                    <tr>
+                        <td colspan="6" class="text-center pet-muted py-4">
+                            Nenhuma localizacao cadastrada ate o momento.
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</section>
+{% endblock %}

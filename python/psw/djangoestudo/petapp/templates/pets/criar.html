@@ -1,0 +1,17 @@
+{% extends "_base.html" %}
+
+
+{% block content %}
+<h1 class="h3 mb-3">Adicionar pet</h1>
+
+#token
+#criando formulário para coletar
+<form action="" method="post">
+
+    {% csrf_token %}
+
+    #criando formulário para coletar
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Criar</button>
+</form>
+{% endblock %}
