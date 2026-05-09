@@ -1,0 +1,3 @@
+echo "*.json" >> .gitignore
+# ou especificamente:
+echo "bancod...fbsvc-d90439b896.json" >> .gitignore
