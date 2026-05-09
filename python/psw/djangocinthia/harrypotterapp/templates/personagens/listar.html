@@ -2,14 +2,24 @@
 
 {% block content %}
 <section>
-    <div class="d-flex justify-content-between align-items-center mb-4">
+    <div class="hero-panel d-flex flex-column flex-lg-row justify-content-between align-items-lg-center gap-3">
         <div>
-            <h1 class="h3 mb-1">Visualizar personagens</h1>
-            <p class="tema-muted mb-0">Lista completa dos personagens do mundo bruxo.</p>
+            <div class="hero-kicker mb-2">Registro dos Bruxos</div>
+            <h1 class="display-6 mb-2">Personagens do mundo mágico</h1>
+            <p class="mb-0" style="max-width: 42rem; color: rgba(247, 237, 215, 0.82);">Um painel com mais cara de Hogwarts: pergaminho, vinho escuro e detalhes dourados para consultar cada personagem.</p>
         </div>
+        <div class="info-chip">{{ personagens|length }} registro{{ personagens|length|pluralize }}</div>
     </div>
 
-    <div class="table-responsive">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <div>
+            <div class="section-kicker mb-1">Salão principal</div>
+            <h2 class="h4 content-title mb-0">Fichas abertas para consulta</h2>
+        </div>
+        <a class="btn magic-btn" href="{% url 'create' %}">Adicionar personagem</a>
+    </div>
+
+    <div class="table-responsive magic-table">
         <table class="table table-hover align-middle">
             <thead>
                 <tr>
@@ -25,8 +35,8 @@
                 {% for personagem in personagens %}
                     <tr>
                         <td>{{ personagem.id }}</td>
-                        <td>{{ personagem.nome }}</td>
-                        <td>{{ personagem.casa }}</td>
+                        <td class="fw-semibold">{{ personagem.nome }}</td>
+                        <td><span class="info-chip">{{ personagem.casa }}</span></td>
                         <td>{{ personagem.patrono }}</td>
                         <td>{{ personagem.data_nascimento|date:"d/m/Y" }}</td>
                         <td class="d-flex gap-2">

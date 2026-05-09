@@ -1,0 +1,41 @@
+{% extends "_base.html" %}
+
+{% block content %}
+<section>
+    <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3 mb-4">
+        <div>
+            <div class="section-kicker mb-1">Ficha do Salão</div>
+            <h1 class="h3 content-title mb-1">Detalhes da casa</h1>
+            <p class="tema-muted mb-0">Informações completas da casa {{ casa.nome }} dentro do arquivo mágico.</p>
+        </div>
+        <a href="{% url 'listar_casas' %}" class="btn btn-outline-secondary">Voltar</a>
+    </div>
+
+    <div class="row g-3">
+        <div class="col-12 col-md-6">
+            <div class="card tema-card border-0 h-100">
+                <div class="card-body">
+                    <h2 class="h6 mb-3 content-title">Dados principais</h2>
+                    <p class="mb-2"><strong>ID:</strong> {{ casa.id }}</p>
+                    <p class="mb-2"><strong>Nome:</strong> {{ casa.nome }}</p>
+                    <p class="mb-2"><strong>Fundador:</strong> {{ casa.fundador }}</p>
+                    <p class="mb-0"><strong>Animal símbolo:</strong> <span class="info-chip">{{ casa.animal_simbolo }}</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-6">
+            <div class="card tema-card border-0 h-100">
+                <div class="card-body">
+                    <h2 class="h6 mb-3 content-title">Registro da casa</h2>
+                    <p class="mb-2">
+                        <strong>Data de fundação:</strong> {{ casa.data_fundacao|date:"d/m/Y" }}
+                    </p>
+                    <p class="mb-0 tema-muted">
+                        Informações para consulta e acompanhamento do cadastro.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

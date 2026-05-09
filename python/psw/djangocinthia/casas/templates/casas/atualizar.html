@@ -1,0 +1,23 @@
+{% extends "_base.html" %}
+
+{% block content %}
+<section>
+    <div class="hero-panel">
+        <div class="hero-kicker mb-2">Revisão do Tomo</div>
+        <h1 class="display-6 mb-2">Atualizar casa</h1>
+        <p class="mb-0" style="max-width: 42rem; color: rgba(247, 237, 215, 0.82);">Ajuste fundador, símbolo e data de fundação com um visual mais nobre e menos genérico.</p>
+    </div>
+
+    <div class="section-kicker mb-1">Edição</div>
+    <h2 class="h4 content-title mb-3">Corrigir dados da casa</h2>
+
+    <form action="" method="post" class="magic-form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div class="action-row">
+            <button type="submit" class="btn magic-btn">Atualizar casa</button>
+            <a href="{% url 'listar_casas' %}" class="btn btn-outline-secondary">Cancelar</a>
+        </div>
+    </form>
+</section>
+{% endblock %}

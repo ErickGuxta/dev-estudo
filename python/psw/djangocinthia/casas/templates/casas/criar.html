@@ -1,0 +1,24 @@
+{% extends "_base.html" %}
+
+
+{% block content %}
+<section>
+    <div class="hero-panel">
+        <div class="hero-kicker mb-2">Fundação</div>
+        <h1 class="display-6 mb-2">Adicionar nova casa</h1>
+        <p class="mb-0" style="max-width: 42rem; color: rgba(247, 237, 215, 0.82);">Crie o registro com a estética de um livro antigo, mantendo o sistema coerente com o universo bruxo.</p>
+    </div>
+
+    <div class="section-kicker mb-1">Cadastro</div>
+    <h2 class="h4 content-title mb-3">Ficha da casa</h2>
+
+    <form action="" method="post" class="magic-form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div class="action-row">
+            <button type="submit" class="btn magic-btn">Criar casa</button>
+            <a href="{% url 'listar_casas' %}" class="btn btn-outline-secondary">Voltar</a>
+        </div>
+    </form>
+</section>
+{% endblock %}

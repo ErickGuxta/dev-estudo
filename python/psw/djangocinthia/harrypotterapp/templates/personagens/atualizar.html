@@ -1,10 +1,23 @@
 {% extends "_base.html" %}
 
 {% block content %}
-<h1 class="h3 mb-3">Atualizar personagem</h1>
-<form action="" method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit" class="btn btn-primary">Atualizar personagem</button>
-</form>
+<section>
+    <div class="hero-panel">
+        <div class="hero-kicker mb-2">Ajuste de Registro</div>
+        <h1 class="display-6 mb-2">Atualizar personagem</h1>
+        <p class="mb-0" style="max-width: 42rem; color: rgba(247, 237, 215, 0.82);">Revise os detalhes da ficha e mantenha o cadastro do mundo bruxo sempre em ordem.</p>
+    </div>
+
+    <div class="section-kicker mb-1">Edição</div>
+    <h2 class="h4 content-title mb-3">Corrigir dados mágicos</h2>
+
+    <form action="" method="post" class="magic-form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div class="action-row">
+            <button type="submit" class="btn magic-btn">Atualizar personagem</button>
+            <a href="{% url 'listar_personagens' %}" class="btn btn-outline-secondary">Cancelar</a>
+        </div>
+    </form>
+</section>
 {% endblock %}

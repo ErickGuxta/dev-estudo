@@ -10,18 +10,30 @@
     >
     <style>
         :root {
-            --bg-main: #f8f1df;
-            --bg-card: #fffaf0;
-            --bg-sidebar: #3d0c02;
-            --text-main: #2b1d0e;
-            --accent: #740001;
-            --accent-soft: #d3a625;
-            --border-soft: #d8c7a1;
+            --bg-main: #0f0b0d;
+            --bg-panel: rgba(34, 23, 18, 0.92);
+            --bg-card: #f3e6c8;
+            --bg-card-soft: #ead8b1;
+            --bg-sidebar: #1b1210;
+            --text-main: #241710;
+            --text-soft: #6d5741;
+            --text-light: #f7edd7;
+            --accent: #7b1e24;
+            --accent-strong: #4f0f14;
+            --gold: #cda349;
+            --gold-soft: #f0d79a;
+            --border-soft: rgba(124, 86, 48, 0.35);
+            --shadow-magic: 0 18px 45px rgba(0, 0, 0, 0.35);
         }
 
         body {
-            background-color: var(--bg-main);
+            min-height: 100vh;
+            background:
+                radial-gradient(circle at top, rgba(205, 163, 73, 0.18), transparent 30%),
+                radial-gradient(circle at 20% 20%, rgba(123, 30, 36, 0.22), transparent 22%),
+                linear-gradient(180deg, #120c10 0%, #1b1210 42%, #0f0b0d 100%);
             color: var(--text-main);
+            font-family: Georgia, "Times New Roman", serif;
         }
 
         .layout-wrapper {
@@ -30,25 +42,239 @@
             flex-direction: column;
         }
 
+        .page-frame {
+            padding: 1.25rem;
+        }
+
         .main-area {
             flex: 1;
         }
 
+        .sidebar-shell {
+            background: linear-gradient(180deg, rgba(18, 12, 10, 0.96), rgba(39, 24, 18, 0.92));
+            border-right: 1px solid rgba(240, 215, 154, 0.12);
+        }
+
         .content-card {
             background: var(--bg-card);
-            border: 1px solid var(--border-soft);
-            border-radius: 12px;
-            padding: 1.5rem;
+            border: 1px solid rgba(100, 66, 30, 0.22);
+            border-radius: 24px;
+            padding: 1.75rem;
+            box-shadow: var(--shadow-magic);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .content-card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.28), transparent 42%);
+            pointer-events: none;
+        }
+
+        .content-card > * {
+            position: relative;
+            z-index: 1;
         }
 
         .tema-muted {
-            color: #6b5b4b;
+            color: var(--text-soft);
         }
 
         .tema-card {
-            background: #ffffff;
+            background: linear-gradient(180deg, rgba(255, 249, 237, 0.95), rgba(239, 221, 182, 0.88));
             border: 1px solid var(--border-soft);
-            border-radius: 12px;
+            border-radius: 18px;
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.55);
+        }
+
+        .hero-panel {
+            background: linear-gradient(120deg, rgba(79, 15, 20, 0.96), rgba(123, 30, 36, 0.92));
+            color: var(--text-light);
+            border-radius: 22px;
+            padding: 1.5rem;
+            border: 1px solid rgba(240, 215, 154, 0.16);
+            box-shadow: var(--shadow-magic);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-kicker,
+        .section-kicker {
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            font-size: 0.78rem;
+            color: var(--gold-soft);
+        }
+
+        .section-kicker {
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .magic-btn,
+        .btn-primary {
+            background: linear-gradient(180deg, var(--gold) 0%, #ad7f2e 100%);
+            border: 1px solid #8b6421;
+            color: #22150d;
+            font-weight: 700;
+            border-radius: 999px;
+            padding: 0.65rem 1.1rem;
+        }
+
+        .magic-btn:hover,
+        .btn-primary:hover,
+        .magic-btn:focus,
+        .btn-primary:focus {
+            background: linear-gradient(180deg, #dfbc66 0%, #ba8b33 100%);
+            color: #22150d;
+            border-color: #8b6421;
+        }
+
+        .btn-outline-secondary,
+        .btn-outline-primary,
+        .btn-outline-danger,
+        .btn-secondary,
+        .btn-danger {
+            border-radius: 999px;
+        }
+
+        .btn-outline-secondary {
+            border-color: rgba(79, 15, 20, 0.42);
+            color: var(--accent-strong);
+        }
+
+        .btn-outline-secondary:hover {
+            background: rgba(79, 15, 20, 0.08);
+            color: var(--accent-strong);
+            border-color: var(--accent-strong);
+        }
+
+        .btn-outline-primary {
+            border-color: rgba(205, 163, 73, 0.8);
+            color: #735318;
+        }
+
+        .btn-outline-primary:hover {
+            background: rgba(205, 163, 73, 0.14);
+            color: #5d4313;
+            border-color: #9b7324;
+        }
+
+        .btn-danger,
+        .btn-outline-danger:hover {
+            background: linear-gradient(180deg, #98343d 0%, #73141b 100%);
+            border-color: #5d1016;
+        }
+
+        .magic-form {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .magic-form p {
+            margin: 0;
+        }
+
+        .magic-form label {
+            display: block;
+            margin-bottom: 0.45rem;
+            font-weight: 700;
+            color: var(--accent-strong);
+        }
+
+        .magic-form input,
+        .magic-form select,
+        .magic-form textarea,
+        .form-control {
+            background: rgba(255, 251, 244, 0.88);
+            border: 1px solid rgba(122, 87, 55, 0.35);
+            border-radius: 14px;
+            color: var(--text-main);
+            padding: 0.75rem 0.95rem;
+            width: 100%;
+        }
+
+        .magic-form input:focus,
+        .magic-form select:focus,
+        .magic-form textarea:focus,
+        .form-control:focus {
+            border-color: rgba(123, 30, 36, 0.65);
+            box-shadow: 0 0 0 0.2rem rgba(123, 30, 36, 0.12);
+        }
+
+        .magic-table {
+            overflow: hidden;
+            border-radius: 18px;
+            border: 1px solid rgba(122, 87, 55, 0.18);
+            background: rgba(255, 250, 240, 0.45);
+        }
+
+        .magic-table .table {
+            margin-bottom: 0;
+        }
+
+        .magic-table thead th {
+            background: rgba(79, 15, 20, 0.92);
+            color: var(--text-light);
+            border-bottom: none;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+        }
+
+        .magic-table tbody td {
+            background: rgba(255, 250, 240, 0.78);
+            border-color: rgba(122, 87, 55, 0.12);
+        }
+
+        .magic-table tbody tr:hover td {
+            background: rgba(240, 215, 154, 0.18);
+        }
+
+        .info-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            padding: 0.35rem 0.75rem;
+            border-radius: 999px;
+            background: rgba(240, 215, 154, 0.28);
+            color: #5c4317;
+            font-size: 0.9rem;
+            font-weight: 700;
+        }
+
+        .action-row {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            margin-top: 0.5rem;
+        }
+
+        .danger-panel {
+            background: linear-gradient(180deg, rgba(255, 245, 240, 0.96), rgba(244, 219, 208, 0.9));
+            border: 1px solid rgba(124, 18, 30, 0.18);
+            border-radius: 18px;
+            padding: 1.35rem;
+        }
+
+        .content-title {
+            color: var(--accent-strong);
+            font-weight: 700;
+        }
+
+        @media (max-width: 767.98px) {
+            .page-frame {
+                padding: 0.75rem;
+            }
+
+            .content-card {
+                padding: 1.2rem;
+                border-radius: 20px;
+            }
+
+            .hero-panel {
+                padding: 1.2rem;
+            }
         }
     </style>
 </head>
@@ -56,11 +282,11 @@
     <div class="layout-wrapper">
         {% include "_header.html" %}
 
-        <div class="container-fluid main-area">
+        <div class="container-fluid main-area page-frame">
             <div class="row g-0">
                 {% include "_sidebar.html" %}
 
-                <main class="col-12 col-md-9 col-lg-10 p-4">
+                <main class="col-12 col-md-9 col-lg-10 p-3 p-lg-4">
                     <div class="content-card">
                         {% block content %}{% endblock %}
                     </div>

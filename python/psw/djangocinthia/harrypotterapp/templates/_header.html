@@ -1,7 +1,8 @@
-<header class="navbar navbar-expand-lg bg-white border-bottom sticky-top">
-    <div class="container-fluid px-4">
-        <a class="navbar-brand fw-semibold text-primary" href="{% url 'index' %}">
-            Harry Potter
+<header class="navbar navbar-expand-lg navbar-dark sticky-top" style="background: linear-gradient(180deg, rgba(16, 10, 9, 0.98), rgba(48, 25, 22, 0.94)); border-bottom: 1px solid rgba(240, 215, 154, 0.16); backdrop-filter: blur(8px);">
+    <div class="container-fluid px-4 py-2">
+        <a class="navbar-brand d-flex flex-column" href="{% url 'index' %}">
+            <span class="small text-uppercase" style="letter-spacing: 0.18em; color: #f0d79a;">Arquivo Mágico</span>
+            <span class="fw-semibold" style="font-size: 1.25rem; color: #f7edd7;">Harry Potter</span>
         </a>
         <button
             class="navbar-toggler"
@@ -16,12 +17,18 @@
         </button>
 
         <div class="collapse navbar-collapse" id="navbarMenu">
-            <ul class="navbar-nav ms-auto">
+            <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'listar_personagens' %}">Personagens</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'create' %}">Adicionar personagem</a>
+                    <a class="nav-link" href="{% url 'create' %}">Novo bruxo</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'listar_casas' %}">Casas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'create_casa' %}">Nova casa</a>
                 </li>
             </ul>
         </div>

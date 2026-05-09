@@ -1,0 +1,20 @@
+{% extends "_base.html" %}
+
+{% block content %}
+<section>
+    <div class="section-kicker mb-1">Decisão do Conselho</div>
+    <h1 class="h3 content-title mb-3">Remover casa do arquivo</h1>
+
+    <div class="danger-panel">
+        <p class="mb-3">Tem certeza que deseja apagar o registro da casa <strong>{{ casa.nome }}</strong>?</p>
+
+        <form action="" method="post">
+            {% csrf_token %}
+            <div class="action-row">
+                <button type="submit" class="btn btn-danger">Deletar</button>
+                <a href="{% url 'listar_casas' %}" class="btn btn-outline-secondary">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</section>
+{% endblock %}

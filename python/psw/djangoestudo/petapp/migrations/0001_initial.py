@@ -14,11 +14,11 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Pet',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('nome', models.CharField(max_length=100)),
-                ('cor', models.CharField(max_length=100)),
+                ('id',              models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('nome',            models.CharField(max_length=100)),
+                ('cor',             models.CharField(max_length=100)),
                 ('data_nascimento', models.DateField()),
-                ('raca', models.CharField(max_length=100)),
+                ('raca',            models.CharField(max_length=100)),
             ],
         ),
     ]
